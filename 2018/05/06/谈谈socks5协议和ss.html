@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="More Effective C++," />
+  <meta name="keywords" content="socks," />
 
 
 
@@ -88,18 +88,24 @@
 
 
 
-<meta name="description" content="前言 最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。  三种new和delete我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete">
-<meta name="keywords" content="More Effective C++">
+<meta name="description" content="ss和socks5协议 本文首发于个人博客:www.thorns.cn  前言:由于最近公司需要一个自己的代理服务,所以花了一周的时间去研究了下shadowsocks实现的原理,以及socks5协议。 认识ShadowsocksShadowsocks是一个能骗过GFW的网络代理工具,它把我们要访问的数据请求,比如google,youtube，facebook…进行加密后传输到GFW外的服务端,由服">
+<meta name="keywords" content="socks">
 <meta property="og:type" content="article">
-<meta property="og:title" content="More Effective C++ 8:new和delete">
-<meta property="og:url" content="http://www.thorns.cn/2018/05/03/new.html">
+<meta property="og:title" content="谈谈ss和socks5协议">
+<meta property="og:url" content="http://www.thorns.cn/2018/05/06/谈谈socks5协议和ss.html">
 <meta property="og:site_name" content="Thorn&#39;s Blog">
-<meta property="og:description" content="前言 最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。  三种new和delete我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete">
+<meta property="og:description" content="ss和socks5协议 本文首发于个人博客:www.thorns.cn  前言:由于最近公司需要一个自己的代理服务,所以花了一周的时间去研究了下shadowsocks实现的原理,以及socks5协议。 认识ShadowsocksShadowsocks是一个能骗过GFW的网络代理工具,它把我们要访问的数据请求,比如google,youtube，facebook…进行加密后传输到GFW外的服务端,由服">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-06T08:06:24.404Z">
+<meta property="og:image" content="http://www.thorns.cn/2018/05/06/images/liucheng.png">
+<meta property="og:image" content="http://www.thorns.cn/2018/05/06/images/xs.png">
+<meta property="og:image" content="http://www.thorns.cn/2018/05/06/images/xs1.png">
+<meta property="og:image" content="http://www.thorns.cn/2018/05/06/images/re.png">
+<meta property="og:image" content="http://www.thorns.cn/2018/05/06/images/sre.png">
+<meta property="og:updated_time" content="2018-05-06T08:15:22.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="More Effective C++ 8:new和delete">
-<meta name="twitter:description" content="前言 最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。  三种new和delete我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete">
+<meta name="twitter:title" content="谈谈ss和socks5协议">
+<meta name="twitter:description" content="ss和socks5协议 本文首发于个人博客:www.thorns.cn  前言:由于最近公司需要一个自己的代理服务,所以花了一周的时间去研究了下shadowsocks实现的原理,以及socks5协议。 认识ShadowsocksShadowsocks是一个能骗过GFW的网络代理工具,它把我们要访问的数据请求,比如google,youtube，facebook…进行加密后传输到GFW外的服务端,由服">
+<meta name="twitter:image" content="http://www.thorns.cn/2018/05/06/images/liucheng.png">
 
 
 
@@ -129,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://www.thorns.cn/2018/05/03/new.html"/>
+  <link rel="canonical" href="http://www.thorns.cn/2018/05/06/谈谈socks5协议和ss.html"/>
 
 
 
 
 
-  <title>More Effective C++ 8:new和delete | Thorn's Blog</title>
+  <title>谈谈ss和socks5协议 | Thorn's Blog</title>
   
 
 
@@ -284,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/05/03/new.html">
+    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/05/06/谈谈socks5协议和ss.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thorn">
@@ -301,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">More Effective C++ 8:new和delete</h1>
+          <h1 class="post-title" itemprop="name headline">谈谈ss和socks5协议</h1>
         
 
         <div class="post-meta">
@@ -313,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T04:04:44+08:00">
-                2018-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T16:12:32+08:00">
+                2018-05-06
               </time>
             
 
@@ -336,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/More-Effective-C/" itemprop="url" rel="index">
-                    <span itemprop="name">More Effective C++</span>
+                  <a href="/categories/网络编程/" itemprop="url" rel="index">
+                    <span itemprop="name">网络编程</span>
                   </a>
                 </span>
 
@@ -367,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  908
+                  1,523
                 </span>
               
 
@@ -383,7 +389,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -404,33 +410,70 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。</p>
+        <h1 id="ss和socks5协议"><a href="#ss和socks5协议" class="headerlink" title="ss和socks5协议"></a>ss和socks5协议</h1><blockquote>
+<p>本文首发于个人博客:<a href="http://www.thorns.cn">www.thorns.cn</a></p>
 </blockquote>
-<h1 id="三种new和delete"><a href="#三种new和delete" class="headerlink" title="三种new和delete"></a>三种new和delete</h1><p>我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete operator。下面分别介绍这几种操作</p>
-<h2 id="new-operator和delete-operator"><a href="#new-operator和delete-operator" class="headerlink" title="new operator和delete operator"></a>new operator和delete operator</h2><p>new operator和delete operator就是我们经常使用的new和delete,这两个操作符是由语言内建的,就像sizeof操作符一样，不能被改变意义。当我们写出这样的代码时new operatorf和new delete在执行时分为两步:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string *ps=new string(&quot;new operator&quot;);</span><br><span class="line">delete ps;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>new operator 会先执行分配内存的操作,它会调用一个只分配内存的函数,这个函数就是operator new,它分配足够的内存，用来放置对象。new delete在释放内存前，会先调用对象的析构函数.</li>
-<li>当new operator分配完内存的时候,它会调用一个构造函数,为刚才分配的内存中的对象设定初值。而delete operator调用完析构函数时,它会调用一个释放内存的函数 operator delete,这时候才会释放对象所占用的内存。</li>
-</ol>
-<p>以上两行代码，拆分开来就是这样,先调用构造函数,分配内存，调用析构函数，释放内存,在编译器中的操作如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void *memory=operator new(sizeof(string)); //取得原始内存</span><br><span class="line">call string::string(&quot;Memory Management&quot;) on*memory;//将内存中的对象初始化</span><br><span class="line">string *ps=static_cast&lt;string*&gt;(memory)；</span><br></pre></td></tr></table></figure>
+<p>前言:由于最近公司需要一个自己的代理服务,所以花了一周的时间去研究了下shadowsocks实现的原理,以及socks5协议。</p>
+<h1 id="认识Shadowsocks"><a href="#认识Shadowsocks" class="headerlink" title="认识Shadowsocks"></a>认识Shadowsocks</h1><p>Shadowsocks是一个能骗过GFW的网络代理工具,它把我们要访问的数据请求,比如google,youtube，facebook…进行加密后传输到GFW外的服务端,由服务端去访问目标站点再加密返回给我们,网络中的GFW由于不知道传输的原内容是什么只好放行,于是就完成了我们所谓的”翻墙”。  </p>
+<h1 id="Shadowsocks原理"><a href="#Shadowsocks原理" class="headerlink" title="Shadowsocks原理"></a>Shadowsocks原理</h1><p>SS(Shadowsocks)由两部分组成,运行在本地的ss-local和防火墙之外服务器上的ss-server。ss-local的职责是在本机启动和监听一个服务,本地软件的网络请求都会先发送到ss-local,ss-local收到来自本地软件的网络请求后,把要传输的原数据根据用户配置的加密方法和密码进行加密,再转发到服务端。ss-server的职责是在墙外服务器启动和监听一个服务,当服务端收到ss-local转发过来的数据时,会根据用户配置的加密方法和密码对数据进行解密,同时还会解socks5协议，然后会把解密后的数据转发到真正的请求目标服务地址(例如Google),以下是整个流程图.<br><img src="/2018/05/06/images/liucheng.png" alt="avatar"></p>
+<h1 id="Socks5协议介绍"><a href="#Socks5协议介绍" class="headerlink" title="Socks5协议介绍"></a>Socks5协议介绍</h1><p>SS的数据传输是建立在socks5协议之上的，Socks5是TCP/IP的网络代理协议，socks5有协商认证请求部分,个人更喜欢把他叫做Protocol Handshake。</p>
+<h2 id="协商版本和验证方法"><a href="#协商版本和验证方法" class="headerlink" title="协商版本和验证方法"></a>协商版本和验证方法</h2><p>当我们的客户端向服务端建立连接之后,客户端就会向服务端进行协商,发送的数据包如下:<br><img src="/2018/05/06/images/xs.png" alt="avatar"></p>
+<p>其中各字段的含义如下:<br>VER:代表SOCKS的版本,SOCKS5 默认为0x05,固定长度一个字节。<br>NMETHODS:表示第三个字段的长度(也就是有几种认证方法),长度也是一个字节<br>METHODS:表示客户端支持的验证方式,可以有多种,长度1-255字节。<br>支持的验证方式有:  </p>
 <ul>
-<li>注意new operator 和new delete都不可以被重载。</li>
+<li>0x00:NO AUTHENTICATION REQUIRED（不需要验证）  </li>
+<li>0x01:GSSAPI (通用安全服务应用程序接口)  </li>
+<li>0x02:USERNAME/PASSWD(用户名密码)  </li>
+<li>0x03:IANA ASSIGNED(至 0x’7F’ IANA 分配)</li>
+<li>0x80:RESERVED FOR PRIVATE METHODS(至 0x’FE’ 私人方法保留)  </li>
+<li>0xff:NO ACCEPTABLE METHODS(没有可接受的方法)<br>当服务端收到客户端的验证机信息之后，就要回应客户端提供哪种验证方式的信息。服务端回应的包格式如下:<br><img src="/2018/05/06/images/xs1.png" alt="avatar"></li>
+<li>VER:代表SOCKS的版本,SOCKS5默认为0x05,长度一个字节。  </li>
+<li>METHOD:代表服务端回应客户端需要哪种验证方式,可以为上面六种验证方式之一   </li>
 </ul>
-<h2 id="operator-new和operator-delete"><a href="#operator-new和operator-delete" class="headerlink" title="operator new和operator delete"></a>operator new和operator delete</h2><p>上面一直说到new和delete其实在内部都会调用到这两个函数，这两个函数到底跟new和delete有什么区别呢？通常operator new ,operator delete声明如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void *ps=operator new(sizeof(string));</span><br><span class="line">operator delete(ps);</span><br></pre></td></tr></table></figure>
-<h2 id="placement-new-定位new"><a href="#placement-new-定位new" class="headerlink" title="placement new(定位new)"></a>placement new(定位new)</h2><blockquote>
-<p>写这篇文章,其实主要是写这个用法，还记得看到这个用法的时候，是在侯捷翻译的另一本书《STL 源码剖析》在讲空间配置器时看见的。</p>
-</blockquote>
-<p>placement new是operator new的一种特殊版本,也是new operator的另一种用法,在已分配的内存上构造对象。要使用placement new必须要包含头文件new,#include或者#include&lt;new.h&gt;,调用示例就直接用书上的了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Widget</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    Widget(int widgetSize);</span><br><span class="line">&#125;;</span><br><span class="line">Widget *constructWidgetInBuffer(void *buffer,int widgetSize)</span><br><span class="line">&#123;</span><br><span class="line">    return new(buffer) Widget(widgetSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此函数返回指针,指向一个Widget对象,它被构造于传递给此函数的一块内存缓冲区上。在函数内部唯一的表达式就是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new (buffer) Widget(widgetSize);</span><br></pre></td></tr></table></figure>
-<p>于是,在buffer指向的这边空间，就构造了一个Widget对象。</p>
-<p>注意,如果你使用了placement new，在某块内存中产生对象,应该避免对那块内存使用delete operator。因为这个delete operator会调用operator delete来释放内存,但是该内存内含的对象最初并非是由operator new分配得来的,毕竟placement new只是返回它所接受的指针而已,应该直接调用该对象的析构,然后在释放内存。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void *mallocShared(size_t size);</span><br><span class="line">void freeShared(void *memory);</span><br><span class="line">void *sharedMemory=mallocShared(sizeof(Widget));</span><br><span class="line">Widget *pw=constructWidgeInBuffer(sharedMemory,10);//placement new用法</span><br><span class="line">...</span><br><span class="line">delete pw;//错。sharedMemory来自mallocShared，不是来自operator new</span><br><span class="line">pw.~Widget();  //可以，析构pw所指的Widget对象,但并未释放Widget占用的内存</span><br><span class="line">freeShared(pw);  //可以,释放pw所指的内存,不调用任何析构函数</span><br></pre></td></tr></table></figure>
+<p>举个例子,比如客户端发送的包是 0x05 0x01 0x02，如果服务端不需要验证就会返回0X05 0X00,需要验证就会返回0x05 0x02,接下来客户端就需要进行认证这一步，也就是把用户名和密码发送给服务端进行认证,在这里我就不介绍认证这一步了,直接说请求这一步。</p>
+<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><p>客户端发起的连接由服务端验证通过后,客户端下一步就应该把要访问的目的网站地址给服务端,服务端得到地址后再去请求真正的目标服务。这一步客户端需要发送的包格式如下:<br><img src="/2018/05/06/images/re.png" alt="avatar"></p>
+<p>各个字段含义如下:</p>
+<ul>
+<li>VER:socks的版本  </li>
+<li>CMD:代表客户端请求的类型，值长度1个字节,有三种类型:  <ol>
+<li>Connect: 0x01  </li>
+<li>BIND: 0x02</li>
+<li>UDP: 0x03</li>
+</ol>
+</li>
+<li>RSV:保留字段,默认0x00,长度1个字节</li>
+<li>ATYP:代表请求的远程服务器地址类型,长度1个字节，三种类型:<ol>
+<li>IPV4: 0x01</li>
+<li>IPV6: 0x04</li>
+<li>DOMAINNAME: 0x03</li>
+</ol>
+</li>
+<li>DST.ADDR:代表远程服务器的地址,根据ATYP进行解析,值长度不定  </li>
+<li>DST.PORT:代表远程服务器的端口,值长度2个字节</li>
+</ul>
+<p>服务端再收到客户端告诉的目标服务地址后，便和目标进行连接,不管成功与否,服务器都应该把连接的结果告诉客户端.如果连接成功的情况下,服务端返回的包格式如下:<br><img src="/2018/05/06/images/sre.png" alt="avatar"></p>
+<p>各个字段含义如下:</p>
+<ul>
+<li>REP:代表响应码,值长度1个字节，有如下类型<ol>
+<li>0x00:succeeded(成功)</li>
+<li>0x01:general SOCKS server failure(socks5服务器失败)</li>
+<li>0x02:connection not allowed by ruleset</li>
+<li>0x03:Network unreachable(网络无法访问)</li>
+<li>0x04:Host unreachable(主机无法访问)</li>
+<li>0x05:Connection refused(拒绝连接)</li>
+<li>0x06:TTL expired(TTL 超时)</li>
+<li>0x07:Command not supported(命令不支持)</li>
+<li>0x08:Address type not supported(地址类型不受支持)</li>
+<li>0x09:to 0xFF unassigned</li>
+</ol>
+</li>
+<li>RSV:保留字,值长度一字节  </li>
+<li>BND.ADDR:表示绑定地址,值长度不定  </li>
+<li>BND.PORT:表示绑定端口,值长度2字节  </li>
+</ul>
+<h2 id="数据转发"><a href="#数据转发" class="headerlink" title="数据转发"></a>数据转发</h2><p>客户端在收到来自服务器成功的响应后，就会开始发送数据给本地代理，本地代理加密后进行转发给服务端,服务端解密之后访问最终目标服务。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SOCKS5协议的目的就是为了把原本应该在本机直接请求目标服务的流程,放到了服务端去代理 客户端访问.运行流程如下:</p>
+<p>本地代理和服务端协商认证请求<br>本地代理告诉服务端目标服务的地址<br>服务端去访问目标服务,成功后告诉本地代理<br>本机开始发送原本应发送到目标服务的数据给服务端,由服务端完成数据转发  </p>
+<p>注:以上内容有很多部分都是参考RFC1928,和其他博主发表的博文，借鉴而来。如果感觉有什么地方不对或者不同见解的，都可以提出争议,以立即改正。</p>
 
       
     </div>
@@ -448,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/More-Effective-C/" rel="tag"># More Effective C++</a>
+            <a href="/tags/socks/" rel="tag"># socks</a>
           
         </div>
       
@@ -461,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/01/Windows下编译libcurl.html" rel="next" title="Windows下编译libcurl和使用">
-                <i class="fa fa-chevron-left"></i> Windows下编译libcurl和使用
+              <a href="/2018/05/06/hello-world.html" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -470,10 +513,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/06/hello-world.html" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种new和delete"><span class="nav-number">2.</span> <span class="nav-text">三种new和delete</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#new-operator和delete-operator"><span class="nav-number">2.1.</span> <span class="nav-text">new operator和delete operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#operator-new和operator-delete"><span class="nav-number">2.2.</span> <span class="nav-text">operator new和operator delete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#placement-new-定位new"><span class="nav-number">2.3.</span> <span class="nav-text">placement new(定位new)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ss和socks5协议"><span class="nav-number">1.</span> <span class="nav-text">ss和socks5协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#认识Shadowsocks"><span class="nav-number">2.</span> <span class="nav-text">认识Shadowsocks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shadowsocks原理"><span class="nav-number">3.</span> <span class="nav-text">Shadowsocks原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Socks5协议介绍"><span class="nav-number">4.</span> <span class="nav-text">Socks5协议介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协商版本和验证方法"><span class="nav-number">4.1.</span> <span class="nav-text">协商版本和验证方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求"><span class="nav-number">4.2.</span> <span class="nav-text">请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据转发"><span class="nav-number">4.3.</span> <span class="nav-text">数据转发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
