@@ -38,6 +38,32 @@
   </entry>
   
   <entry>
+    <title>More Effective C++ 8:new和delete</title>
+    <link href="http://www.thorns.cn/2018/05/03/new.html"/>
+    <id>http://www.thorns.cn/2018/05/03/new.html</id>
+    <published>2018-05-02T20:04:44.000Z</published>
+    <updated>2018-05-06T08:06:24.404Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。</p></blockquote><h1 id="三种new和delete"><a href="#三种new和delete" class="headerlink" title="三种new和delete"></a>三种new和delete</h1><p>我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete operator。下面分别介绍这几种操作</p><h2 id="new-operator和delete-operator"><a href="#new-operator和delete-operator" class="headerlink" title="new operator和delete operator"></a>new operator和delete operator</h2><p>new operator和delete operator就是我们经常使用的new和delete,这两个操作符是由语言内建的,就像sizeof操作符一样，不能被改变意义。当我们写出这样的代码时new operatorf和new delete在执行时分为两步:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string *ps=new string(&quot;new operator&quot;);</span><br><span class="line">delete ps;</span><br></pre></td></tr></table></figure><ol><li>new operator 会先执行分配内存的操作,它会调用一个只分配内存的函数,这个函数就是operator new,它分配足够的内存，用来放置对象。new delete在释放内存前，会先调用对象的析构函数.</li><li>当new operator分配完内存的时候,它会调用一个构造函数,为刚才分配的内存中的对象设定初值。而delete operator调用完析构函数时,它会调用一个释放内存的函数 operator delete,这时候才会释放对象所占用的内存。</li></ol><p>以上两行代码，拆分开来就是这样,先调用构造函数,分配内存，调用析构函数，释放内存,在编译器中的操作如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void *memory=operator new(sizeof(string)); //取得原始内存</span><br><span class="line">call string::string(&quot;Memory Management&quot;) on*memory;//将内存中的对象初始化</span><br><span class="line">string *ps=static_cast&lt;string*&gt;(memory)；</span><br></pre></td></tr></table></figure><ul><li>注意new operator 和new delete都不可以被重载。</li></ul><h2 id="operator-new和operator-delete"><a href="#operator-new和operator-delete" class="headerlink" title="operator new和operator delete"></a>operator new和operator delete</h2><p>上面一直说到new和delete其实在内部都会调用到这两个函数，这两个函数到底跟new和delete有什么区别呢？通常operator new ,operator delete声明如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void *ps=operator new(sizeof(string));</span><br><span class="line">operator delete(ps);</span><br></pre></td></tr></table></figure><h2 id="placement-new-定位new"><a href="#placement-new-定位new" class="headerlink" title="placement new(定位new)"></a>placement new(定位new)</h2><blockquote><p>写这篇文章,其实主要是写这个用法，还记得看到这个用法的时候，是在侯捷翻译的另一本书《STL 源码剖析》在讲空间配置器时看见的。</p></blockquote><p>placement new是operator new的一种特殊版本,也是new operator的另一种用法,在已分配的内存上构造对象。要使用placement new必须要包含头文件new,#include或者#include&lt;new.h&gt;,调用示例就直接用书上的了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Widget</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    Widget(int widgetSize);</span><br><span class="line">&#125;;</span><br><span class="line">Widget *constructWidgetInBuffer(void *buffer,int widgetSize)</span><br><span class="line">&#123;</span><br><span class="line">    return new(buffer) Widget(widgetSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>此函数返回指针,指向一个Widget对象,它被构造于传递给此函数的一块内存缓冲区上。在函数内部唯一的表达式就是:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new (buffer) Widget(widgetSize);</span><br></pre></td></tr></table></figure><p>于是,在buffer指向的这边空间，就构造了一个Widget对象。</p><p>注意,如果你使用了placement new，在某块内存中产生对象,应该避免对那块内存使用delete operator。因为这个delete operator会调用operator delete来释放内存,但是该内存内含的对象最初并非是由operator new分配得来的,毕竟placement new只是返回它所接受的指针而已,应该直接调用该对象的析构,然后在释放内存。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void *mallocShared(size_t size);</span><br><span class="line">void freeShared(void *memory);</span><br><span class="line">void *sharedMemory=mallocShared(sizeof(Widget));</span><br><span class="line">Widget *pw=constructWidgeInBuffer(sharedMemory,10);//placement new用法</span><br><span class="line">...</span><br><span class="line">delete pw;//错。sharedMemory来自mallocShared，不是来自operator new</span><br><span class="line">pw.~Widget();  //可以，析构pw所指的Widget对象,但并未释放Widget占用的内存</span><br><span class="line">freeShared(pw);  //可以,释放pw所指的内存,不调用任何析构函数</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了
+      
+    
+    </summary>
+    
+      <category term="More Effective C++" scheme="http://www.thorns.cn/categories/More-Effective-C/"/>
+    
+    
+      <category term="More Effective C++" scheme="http://www.thorns.cn/tags/More-Effective-C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows下编译libcurl和使用</title>
     <link href="http://www.thorns.cn/2018/04/01/Windows%E4%B8%8B%E7%BC%96%E8%AF%91libcurl.html"/>
     <id>http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html</id>

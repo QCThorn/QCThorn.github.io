@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="libcurl," />
+  <meta name="keywords" content="More Effective C++," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Windows下编译libcurl和使用 之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。  认识libcurllibcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂">
-<meta name="keywords" content="libcurl">
+<meta name="description" content="前言 最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。  三种new和delete我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete">
+<meta name="keywords" content="More Effective C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows下编译libcurl和使用">
-<meta property="og:url" content="http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html">
+<meta property="og:title" content="More Effective C++ 8:new和delete">
+<meta property="og:url" content="http://www.thorns.cn/2018/05/03/new.html">
 <meta property="og:site_name" content="Thorn&#39;s Blog">
-<meta property="og:description" content="Windows下编译libcurl和使用 之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。  认识libcurllibcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂">
+<meta property="og:description" content="前言 最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。  三种new和delete我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-06T07:38:54.864Z">
+<meta property="og:updated_time" content="2018-05-06T08:06:24.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows下编译libcurl和使用">
-<meta name="twitter:description" content="Windows下编译libcurl和使用 之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。  认识libcurllibcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂">
+<meta name="twitter:title" content="More Effective C++ 8:new和delete">
+<meta name="twitter:description" content="前言 最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。  三种new和delete我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html"/>
+  <link rel="canonical" href="http://www.thorns.cn/2018/05/03/new.html"/>
 
 
 
 
 
-  <title>Windows下编译libcurl和使用 | Thorn's Blog</title>
+  <title>More Effective C++ 8:new和delete | Thorn's Blog</title>
   
 
 
@@ -284,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html">
+    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/05/03/new.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thorn">
@@ -301,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows下编译libcurl和使用</h1>
+          <h1 class="post-title" itemprop="name headline">More Effective C++ 8:new和delete</h1>
         
 
         <div class="post-meta">
@@ -313,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T23:47:44+08:00">
-                2018-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T04:04:44+08:00">
+                2018-05-03
               </time>
             
 
@@ -336,8 +336,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络编程/" itemprop="url" rel="index">
-                    <span itemprop="name">网络编程</span>
+                  <a href="/categories/More-Effective-C/" itemprop="url" rel="index">
+                    <span itemprop="name">More Effective C++</span>
                   </a>
                 </span>
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,183
+                  908
                 </span>
               
 
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -404,49 +404,33 @@
       
 
       
-        <h1 id="Windows下编译libcurl和使用"><a href="#Windows下编译libcurl和使用" class="headerlink" title="Windows下编译libcurl和使用"></a>Windows下编译libcurl和使用</h1><blockquote>
-<p>之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>最近在看侯捷译的More Effective C++,看的过程有不少收获,发现自己对C++很多地方其实没有过多去了解,收获很多,记录一下。</p>
 </blockquote>
-<h1 id="认识libcurl"><a href="#认识libcurl" class="headerlink" title="认识libcurl"></a>认识libcurl</h1><p>libcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂,想要知道更多关于libcurl的介绍,可以到官网<a href="https://cur.heaxx.se上去了解,在这里不做过多介绍。" target="_blank" rel="noopener">https://cur.heaxx.se上去了解,在这里不做过多介绍。</a></p>
-<h1 id="编译libcurl"><a href="#编译libcurl" class="headerlink" title="编译libcurl"></a>编译libcurl</h1><p>在编译libcurl之前,需要先做如下配置</p>
-<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><ul>
-<li>libcurl去官网下载源码 博主自己用的是curl-7.55.0 <a href="https://curl.haxx.se/download/curl-7.55.0.zip" target="_blank" rel="noopener">https://curl.haxx.se/download/curl-7.55.0.zip</a></li>
-<li>openssl,下载openssl-1.0.2k,1.1.0以后的文件安装方法都换了 <a href="https://www.openssl.org/source/" target="_blank" rel="noopener">https://www.openssl.org/source/</a></li>
-<li>下载perl解析器,编译依赖库openssl的时候需要用到<a href="https://www.activestate.com/activeperl/downloads" target="_blank" rel="noopener">https://www.activestate.com/activeperl/downloads</a></li>
-<li>zlib下载1.2.11 <a href="http://zlib.net" target="_blank" rel="noopener">http://zlib.net</a></li>
+<h1 id="三种new和delete"><a href="#三种new和delete" class="headerlink" title="三种new和delete"></a>三种new和delete</h1><p>我们知道,new和delete都是C++里的关键字,同时也是操作符。new负责分配内存，delete释放内存。new和delete都有new operator、operator new，placement new，delete operator。下面分别介绍这几种操作</p>
+<h2 id="new-operator和delete-operator"><a href="#new-operator和delete-operator" class="headerlink" title="new operator和delete operator"></a>new operator和delete operator</h2><p>new operator和delete operator就是我们经常使用的new和delete,这两个操作符是由语言内建的,就像sizeof操作符一样，不能被改变意义。当我们写出这样的代码时new operatorf和new delete在执行时分为两步:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string *ps=new string(&quot;new operator&quot;);</span><br><span class="line">delete ps;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>new operator 会先执行分配内存的操作,它会调用一个只分配内存的函数,这个函数就是operator new,它分配足够的内存，用来放置对象。new delete在释放内存前，会先调用对象的析构函数.</li>
+<li>当new operator分配完内存的时候,它会调用一个构造函数,为刚才分配的内存中的对象设定初值。而delete operator调用完析构函数时,它会调用一个释放内存的函数 operator delete,这时候才会释放对象所占用的内存。</li>
+</ol>
+<p>以上两行代码，拆分开来就是这样,先调用构造函数,分配内存，调用析构函数，释放内存,在编译器中的操作如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void *memory=operator new(sizeof(string)); //取得原始内存</span><br><span class="line">call string::string(&quot;Memory Management&quot;) on*memory;//将内存中的对象初始化</span><br><span class="line">string *ps=static_cast&lt;string*&gt;(memory)；</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意new operator 和new delete都不可以被重载。</li>
 </ul>
-<h3 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h3><p>为了不愿跟博主一样再踩过很多坑以后，才编译成功,在你的盘符根目录下新建一个文件夹名叫libcurl-ssl,将下载的三个压缩包解压到该目录。</p>
-<h3 id="ActiveState安装"><a href="#ActiveState安装" class="headerlink" title="ActiveState安装:"></a>ActiveState安装:</h3><p>执行安装程序,默认安装路径或者自定义路径都可以。</p>
-<h3 id="zlib编译"><a href="#zlib编译" class="headerlink" title="zlib编译"></a>zlib编译</h3><ol>
-<li>在你创建的文件夹下打开zlib-1.2.11\contrib\vstudio\vc14\zlibvc.sln,选择编译release版本,平台x86,x64自选。</li>
-<li>编译过后,会在x86或者x64文件夹下的ZlibDllRelease文件夹中生成zlibwapi.dll和zlibwapi.lib文件</li>
-</ol>
-<h3 id="openssl编译"><a href="#openssl编译" class="headerlink" title="openssl编译"></a>openssl编译</h3><p>这一步算是比较麻烦,也容易出错的地方,因为只能通过命令行来进行编译</p>
-<ol>
-<li>在开始菜单中找到自带的vs本机工具命令提示符,你的vs版本 和要进行编译的平台自己选择。我用的是vs2015 x86</li>
-<li>使用cd命令进入到你创建的文件夹下的openssl-1.0.2k中</li>
-<li>命令行输入perl Configure VC-WIN32 no-asm</li>
-<li>命令行输入ms\do_ms.bat</li>
-<li>命令行输入nmake -f ms/ntdll.mak</li>
-</ol>
-<p>耐心等待编译结束,抽根烟回来就编译好了,查看编译过程只要不出现”stop”,”error”的,就算成功了,如果出现错误的话,最好是把整个文件夹删了，重新解压编译,如果留有编译失败的文件，再进行编译的话它可能会提示”无法解析xxx”。</p>
-<p>接着将openssl-1.0.2k-&gt;inc32-&gt;openssl中所有的.h文件和openssl-1.0.2k-&gt;out32dll中的libeay32.lib、libeay32.dll、ssleay32.lib、ssleay32.dll一起复制到curl-7.55.0-&gt;lib-&gt;opensll中，如果lib文件夹下没有openssl,建立一个就可以了。</p>
-<h3 id="libcurl编译"><a href="#libcurl编译" class="headerlink" title="libcurl编译"></a>libcurl编译</h3><p>libcurl直接使用vs进行编译,编译平台选择DLL DEBUG-DLL OpenSSL</p>
-<ol>
-<li>打开curl-7.55.0-&gt;projects-&gt;Windows-&gt;VC14-&gt;curl-all.sln,可能vs会提示升级工程，确定即可。</li>
-<li>将libcurl设为启动项目,将libcurl的资源文件libcurl.rc移出。</li>
-<li>右键项目选择属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义,将”BUILDING_LIBCURL”改成”CURL_STATICLIB”。接口函数不会被声明为导出函数</li>
-<li>选择属性-&gt;链接器-&gt;输入-&gt;附加依赖项添加 libeay32.lib;ssleay32.lib;ws2_32.lib;wldap32.lib;前两个是为了openssl,后两个是curl必须依赖的。</li>
-</ol>
-<p>在编译成功后curl-7.55.0-&gt;build-&gt;Win32-&gt;VC14-&gt;DLL DEBUG-DLL OpenSSL文件夹中会生成有libcurld.lib和libcurld.dll(注意名字不是libcurl)</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ol>
-<li>创建一个控制台应用,例如项目名叫Test,在你的Test项目下创建include文件夹,将curl-7.55.0-&gt;include目录下的curl文件夹,复制过去。</li>
-<li>新建lib文件夹,将libcurl编译的libcurld.dll和libcurld.lib复制到lib。</li>
-<li>将libcurld.dll和之前OpenSSL生成的libeay32.lib、ssleay32.dll各复制一份到项目exe文件下,否则会报错。会提示定位不到序数,编译的过,运行不过。</li>
-<li>选择配置属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义,添加CURL_STATICLIB。</li>
-<li>属性中的附加包含目录，附加库目录都在代码实现</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&quot;curl/curl.h&quot;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#pragma comment(lib,&quot;libcurld.lib&quot;)</span><br><span class="line"></span><br><span class="line">size_t CallBack(void *ptr, size_t size, size_t nmemb, void *stream)</span><br><span class="line">&#123;</span><br><span class="line">    string *str = (string*)stream;</span><br><span class="line">    cout &lt;&lt; *str &lt;&lt; endl;</span><br><span class="line">    (*str).append((char*)ptr, size*nmemb);</span><br><span class="line">    return size * nmemb;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    easy_global_init(CURL_GLOBAL_ALL);</span><br><span class="line"></span><br><span class="line">    CURL *curl=easy_curl_init();</span><br><span class="line">    if(curl)</span><br><span class="line">    &#123;</span><br><span class="line">        curl_easy_setopt(curl,CURLOPT_URL,&quot;www.baidu.com&quot;);</span><br><span class="line"></span><br><span class="line">        string result;</span><br><span class="line">        //设置ssl</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, false);</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, false);</span><br><span class="line">        //开启调式信息</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CallBack);</span><br><span class="line">        curl_easy_setopt(curl,CURLOT_WRITEDATA,(void *)&amp;result);</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);</span><br><span class="line">        curl_easy_setopt(curl,CURLOPT_TIMEOUT,3);</span><br><span class="line"></span><br><span class="line">        CURLcode res=curl_easy_perform(curl);</span><br><span class="line">        if(CURLE_OK!=res)</span><br><span class="line">        &#123;</span><br><span class="line">            cerr&lt;&lt;&quot;curl_easy_perform() failed&quot;&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="operator-new和operator-delete"><a href="#operator-new和operator-delete" class="headerlink" title="operator new和operator delete"></a>operator new和operator delete</h2><p>上面一直说到new和delete其实在内部都会调用到这两个函数，这两个函数到底跟new和delete有什么区别呢？通常operator new ,operator delete声明如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void *ps=operator new(sizeof(string));</span><br><span class="line">operator delete(ps);</span><br></pre></td></tr></table></figure>
+<h2 id="placement-new-定位new"><a href="#placement-new-定位new" class="headerlink" title="placement new(定位new)"></a>placement new(定位new)</h2><blockquote>
+<p>写这篇文章,其实主要是写这个用法，还记得看到这个用法的时候，是在侯捷翻译的另一本书《STL 源码剖析》在讲空间配置器时看见的。</p>
+</blockquote>
+<p>placement new是operator new的一种特殊版本,也是new operator的另一种用法,在已分配的内存上构造对象。要使用placement new必须要包含头文件new,#include或者#include&lt;new.h&gt;,调用示例就直接用书上的了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Widget</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    Widget(int widgetSize);</span><br><span class="line">&#125;;</span><br><span class="line">Widget *constructWidgetInBuffer(void *buffer,int widgetSize)</span><br><span class="line">&#123;</span><br><span class="line">    return new(buffer) Widget(widgetSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此函数返回指针,指向一个Widget对象,它被构造于传递给此函数的一块内存缓冲区上。在函数内部唯一的表达式就是:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new (buffer) Widget(widgetSize);</span><br></pre></td></tr></table></figure>
+<p>于是,在buffer指向的这边空间，就构造了一个Widget对象。</p>
+<p>注意,如果你使用了placement new，在某块内存中产生对象,应该避免对那块内存使用delete operator。因为这个delete operator会调用operator delete来释放内存,但是该内存内含的对象最初并非是由operator new分配得来的,毕竟placement new只是返回它所接受的指针而已,应该直接调用该对象的析构,然后在释放内存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void *mallocShared(size_t size);</span><br><span class="line">void freeShared(void *memory);</span><br><span class="line">void *sharedMemory=mallocShared(sizeof(Widget));</span><br><span class="line">Widget *pw=constructWidgeInBuffer(sharedMemory,10);//placement new用法</span><br><span class="line">...</span><br><span class="line">delete pw;//错。sharedMemory来自mallocShared，不是来自operator new</span><br><span class="line">pw.~Widget();  //可以，析构pw所指的Widget对象,但并未释放Widget占用的内存</span><br><span class="line">freeShared(pw);  //可以,释放pw所指的内存,不调用任何析构函数</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -464,7 +448,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/libcurl/" rel="tag"># libcurl</a>
+            <a href="/tags/More-Effective-C/" rel="tag"># More Effective C++</a>
           
         </div>
       
@@ -477,14 +461,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/01/Windows下编译libcurl.html" rel="next" title="Windows下编译libcurl和使用">
+                <i class="fa fa-chevron-left"></i> Windows下编译libcurl和使用
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/03/new.html" rel="prev" title="More Effective C++ 8:new和delete">
-                More Effective C++ 8:new和delete <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/06/hello-world.html" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows下编译libcurl和使用"><span class="nav-number">1.</span> <span class="nav-text">Windows下编译libcurl和使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#认识libcurl"><span class="nav-number">2.</span> <span class="nav-text">认识libcurl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译libcurl"><span class="nav-number">3.</span> <span class="nav-text">编译libcurl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载文件"><span class="nav-number">3.1.</span> <span class="nav-text">下载文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置目录"><span class="nav-number">3.1.1.</span> <span class="nav-text">配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ActiveState安装"><span class="nav-number">3.1.2.</span> <span class="nav-text">ActiveState安装:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zlib编译"><span class="nav-number">3.1.3.</span> <span class="nav-text">zlib编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#openssl编译"><span class="nav-number">3.1.4.</span> <span class="nav-text">openssl编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#libcurl编译"><span class="nav-number">3.1.5.</span> <span class="nav-text">libcurl编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">3.2.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种new和delete"><span class="nav-number">2.</span> <span class="nav-text">三种new和delete</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#new-operator和delete-operator"><span class="nav-number">2.1.</span> <span class="nav-text">new operator和delete operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#operator-new和operator-delete"><span class="nav-number">2.2.</span> <span class="nav-text">operator new和operator delete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#placement-new-定位new"><span class="nav-number">2.3.</span> <span class="nav-text">placement new(定位new)</span></a></li></ol></li></ol></div>
             
 
           </div>
