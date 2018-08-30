@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Mongodb," />
+  <meta name="keywords" content="STL traits," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="ubuntu安装Mongodb及配置官方下载地址: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz   使用curl进行下载1curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz 解压1tar -z">
-<meta name="keywords" content="Mongodb">
+<meta name="description" content="STL之traits编程技法的理解 注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录      traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。迭代器的类型我们知道迭">
+<meta name="keywords" content="STL traits">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu安装Mongodb及配置">
-<meta property="og:url" content="http://www.thorns.cn/2018/08/23/ubuntu安装Mongodb及配置.html">
+<meta property="og:title" content="traits编程技法">
+<meta property="og:url" content="http://www.thorns.cn/2018/08/31/traits编程技法.html">
 <meta property="og:site_name" content="Thorn&#39;s Blog">
-<meta property="og:description" content="ubuntu安装Mongodb及配置官方下载地址: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz   使用curl进行下载1curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz 解压1tar -z">
+<meta property="og:description" content="STL之traits编程技法的理解 注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录      traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。迭代器的类型我们知道迭">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T04:10:58.680Z">
+<meta property="og:updated_time" content="2018-08-30T16:10:17.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu安装Mongodb及配置">
-<meta name="twitter:description" content="ubuntu安装Mongodb及配置官方下载地址: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz   使用curl进行下载1curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz 解压1tar -z">
+<meta name="twitter:title" content="traits编程技法">
+<meta name="twitter:description" content="STL之traits编程技法的理解 注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录      traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。迭代器的类型我们知道迭">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.thorns.cn/2018/08/23/ubuntu安装Mongodb及配置.html"/>
+  <link rel="canonical" href="http://www.thorns.cn/2018/08/31/traits编程技法.html"/>
 
 
 
 
 
-  <title>ubuntu安装Mongodb及配置 | Thorn's Blog</title>
+  <title>traits编程技法 | Thorn's Blog</title>
   
 
 
@@ -284,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/08/23/ubuntu安装Mongodb及配置.html">
+    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/08/31/traits编程技法.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thorn">
@@ -301,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu安装Mongodb及配置</h1>
+          <h1 class="post-title" itemprop="name headline">traits编程技法</h1>
         
 
         <div class="post-meta">
@@ -313,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T10:58:20+08:00">
-                2018-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T12:06:20+08:00">
+                2018-08-31
               </time>
             
 
@@ -336,8 +336,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mongodb/" itemprop="url" rel="index">
-                    <span itemprop="name">Mongodb</span>
+                  <a href="/categories/STL源码剖析/" itemprop="url" rel="index">
+                    <span itemprop="name">STL源码剖析</span>
                   </a>
                 </span>
 
@@ -355,8 +355,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2018/08/23/ubuntu安装Mongodb及配置.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/08/23/ubuntu安装Mongodb及配置.html" itemprop="commentsCount"></span>
+                <a href="/2018/08/31/traits编程技法.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/08/31/traits编程技法.html" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  245
+                  884
                 </span>
               
 
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -415,14 +415,26 @@
       
 
       
-        <h1 id="ubuntu安装Mongodb及配置"><a href="#ubuntu安装Mongodb及配置" class="headerlink" title="ubuntu安装Mongodb及配置"></a>ubuntu安装Mongodb及配置</h1><p>官方下载地址: <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz" target="_blank" rel="noopener">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz</a>  </p>
-<p>使用curl进行下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz</span><br></pre></td></tr></table></figure></p>
-<p>解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-linux-x86_64-ubuntu1404-4.0.1.tgz</span><br></pre></td></tr></table></figure></p>
-<p>移动到用户local目录下(可自定义)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv mongodb-linux-x86_64-ubuntu1404-4.0.1.tgz /usr/local/mongodb</span><br></pre></td></tr></table></figure></p>
-<p>创建数据库目录和日志目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /data/db</span><br><span class="line">sudo mkdir /data/logs</span><br></pre></td></tr></table></figure></p>
-<p>创建配置文件,启动mongod时需要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/mongodb/bin/mongodb.conf #将配置文件放在mongodb/bin目录下</span><br><span class="line"></span><br><span class="line">dbpath=/data/db/    #db路径</span><br><span class="line">logpath=/data/logs/mongodb.log  #log路径</span><br><span class="line">fork=true   #以后台模式mongos进程  </span><br><span class="line">port=27017</span><br></pre></td></tr></table></figure></p>
-<p>配置mongodb环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line">#在最后添加</span><br><span class="line">export PATH=$PATH:/usr/local/mongodb/bin</span><br><span class="line">#退出使用source命令使设置生效</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure></p>
-<p>接下来就可以开启mongodb服务了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongod -f /usr/local/mongodb/bin/mongodb.conf</span><br><span class="line">#使用mongo连接服务</span><br><span class="line">mongo</span><br></pre></td></tr></table></figure></p>
+        <h1 id="STL之traits编程技法的理解"><a href="#STL之traits编程技法的理解" class="headerlink" title="STL之traits编程技法的理解"></a>STL之traits编程技法的理解</h1><blockquote>
+<p>注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录   </p>
+</blockquote>
+<ul>
+<li>traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。<h2 id="迭代器的类型"><a href="#迭代器的类型" class="headerlink" title="迭代器的类型"></a>迭代器的类型</h2>我们知道迭代器有五种类型,分别是    </li>
+</ul>
+<ol>
+<li>value_type(迭代器所指对象的类型)</li>
+<li>difference_type(用来表示两个迭代器之间的距离)</li>
+<li>reference_type(迭代器所指对象的引用)</li>
+<li>point_type(迭代器所指的对象)</li>
+<li>iterator_category(标识迭代器的移动特性和可以对迭代器进行的操作,大致可以分为五类)<br> Input iterator<br> Output iterator<br> Forward iterator<br> Bidirectional iterator<br> Random Access iterator     </li>
+</ol>
+<h2 id="声明内嵌型别"><a href="#声明内嵌型别" class="headerlink" title="声明内嵌型别"></a>声明内嵌型别</h2><p>考虑一下，当我们需要实现某个函数时,且该函数的返回类型必须是value_type是，该怎么办？我们不能使用”template 参数推导机制”,毕竟推导机制推导的是参数，无法推导函数的返回值型别。<br>在这里我们就可以用到声明内嵌型别,来解决使用value_type用于函数的返回类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">struct MyIter&#123;</span><br><span class="line">  typedef T value_type;     //内嵌型别声明</span><br><span class="line">  MyIter(T *p=0):ptr(p) &#123;&#125;</span><br><span class="line">  T&amp; operator*() const &#123;return *ptr;&#125;</span><br><span class="line">  private:</span><br><span class="line">    T *ptr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//使用value_type用于函数返回类型</span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">typename I::value_type func(I ite)</span><br><span class="line">&#123;</span><br><span class="line">    return *ite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//...</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Myiter&lt;int&gt; ite(new int(8));</span><br><span class="line">    cout&lt;&lt;func(ite)&lt;&lt;endl;  //输出:8</span><br><span class="line">&#125;</span><br><span class="line">```   </span><br><span class="line">func函数中的typename用意是在告诉编译器I::value_type是一个型别,因为T是一个template参数,在它被编译器具现化之前,编译器对T一无所悉,编译器不知道I::value_type代表的是一个型别还是一个member function或者是data member。   </span><br><span class="line">这样看起来结局了我们的问题,但是有个隐晦的陷阱:并不是所有的迭代器都是class type。原生指针就不是,如果不是class type,就无法为它定义内嵌型别。有没有好的解决办法呢？偏特化可以为我们解决这个问题。</span><br><span class="line">## 模板偏特化</span><br><span class="line">《STL源码剖析》一书上对模板偏特化的意义大致解释是:</span><br><span class="line">&gt; 如果class template拥有一个以上的template参数,我们可以针对其中某个(或数个,但非全部)template参数进行特化工作。换句话说,我们可以在泛化设计中提供一个特化版本。</span><br></pre></td></tr></table></figure></p>
+<p>//萃取器<br>template <class i=""><br>struct iterator_traits{<br>  typedef typename T I::value_type value_type;<br>};</class></p>
+<p>//偏特化版<br>template <class t=""><br>struct ierator_traits&lt;T*&gt;{<br>  typedef T value_type;<br>};</class></p>
+<p>//偏特化过后的func函数<br>template <class t=""><br>typename iterator_traits<i>::value_type //这一整行是函数返回型别<br>func(I ite)<br>{<br>    return *ite;<br>}</i></class></p>
+<p>int main()<br>{<br>    int a=8;<br>    int <em>p=&a;<br>    cout&lt;&lt;func(p)&lt;&lt;endl;    //传的类型是int</em><br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上面我们通过偏特化版就可以获取原始指针的型别用来定义函数返回型别,可能会问如果原始指针是个pointer-to-const怎么办呢？没关系再偏特化一个版本就好了</span><br></pre></td></tr></table></figure>
+<p>template <class t=""><br>struct iterator_traits<const t*="">{<br>  typedef T value_type;<br>};<br><code>`</code><br>以上就是stl中使用的traits技法，traits就像一台”特性萃取机”,萃取各个迭代器的相应型别。</const></class></p>
 
       
     </div>
@@ -440,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Mongodb/" rel="tag"># Mongodb</a>
+            <a href="/tags/STL-traits/" rel="tag"># STL traits</a>
           
         </div>
       
@@ -453,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/06/谈谈socks5协议和ss.html" rel="next" title="谈谈ss和socks5协议">
-                <i class="fa fa-chevron-left"></i> 谈谈ss和socks5协议
+              <a href="/2018/08/23/ubuntu安装Mongodb及配置.html" rel="next" title="ubuntu安装Mongodb及配置">
+                <i class="fa fa-chevron-left"></i> ubuntu安装Mongodb及配置
               </a>
             
           </div>
@@ -462,10 +474,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/31/traits编程技法.html" rel="prev" title="traits编程技法">
-                traits编程技法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ubuntu安装Mongodb及配置"><span class="nav-number">1.</span> <span class="nav-text">ubuntu安装Mongodb及配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STL之traits编程技法的理解"><span class="nav-number">1.</span> <span class="nav-text">STL之traits编程技法的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器的类型"><span class="nav-number">1.1.</span> <span class="nav-text">迭代器的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明内嵌型别"><span class="nav-number">1.2.</span> <span class="nav-text">声明内嵌型别</span></a></li></ol></li></ol></div>
             
 
           </div>
