@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="libcurl," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -88,18 +88,20 @@
 
 
 
-<meta name="description" content="Windows下编译libcurl和使用 之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。  认识libcurllibcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂">
-<meta name="keywords" content="libcurl">
+<meta name="description" content="这么多年你一个人 一直在走前言 恩，昨天某个逼让我失了声感冒了。中午起床极度不爽，得以于此，借深圳余温未散抽空记录一下生活。    &amp;emsp;听他的歌时间不长，不到一年。忘记了从哪首开始，也不知道该在哪首结束。&amp;emsp;记忆中应该是在知晓了“祝星”这号人物的时候，才知道了“港岛妹妹”的西班牙馅饼。那段时间酷爱三毛笔下的西班牙，撒哈拉。也因此喜欢上了陈粒的《历历万乡》。不同于其它人对“港岛妹妹”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows下编译libcurl和使用">
-<meta property="og:url" content="http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html">
+<meta property="og:title" content="这么多年你一个人 一直在走">
+<meta property="og:url" content="http://www.thorns.cn/2018/12/09/这么多年你一个人 你一直在走.html">
 <meta property="og:site_name" content="Thorn&#39;s Blog">
-<meta property="og:description" content="Windows下编译libcurl和使用 之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。  认识libcurllibcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂">
+<meta property="og:description" content="这么多年你一个人 一直在走前言 恩，昨天某个逼让我失了声感冒了。中午起床极度不爽，得以于此，借深圳余温未散抽空记录一下生活。    &amp;emsp;听他的歌时间不长，不到一年。忘记了从哪首开始，也不知道该在哪首结束。&amp;emsp;记忆中应该是在知晓了“祝星”这号人物的时候，才知道了“港岛妹妹”的西班牙馅饼。那段时间酷爱三毛笔下的西班牙，撒哈拉。也因此喜欢上了陈粒的《历历万乡》。不同于其它人对“港岛妹妹”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-06T07:38:54.864Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/12/09/F8W0gJ.md.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2018/12/09/F8oFgS.jpg">
+<meta property="og:updated_time" content="2018-12-09T05:30:03.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows下编译libcurl和使用">
-<meta name="twitter:description" content="Windows下编译libcurl和使用 之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。  认识libcurllibcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂">
+<meta name="twitter:title" content="这么多年你一个人 一直在走">
+<meta name="twitter:description" content="这么多年你一个人 一直在走前言 恩，昨天某个逼让我失了声感冒了。中午起床极度不爽，得以于此，借深圳余温未散抽空记录一下生活。    &amp;emsp;听他的歌时间不长，不到一年。忘记了从哪首开始，也不知道该在哪首结束。&amp;emsp;记忆中应该是在知晓了“祝星”这号人物的时候，才知道了“港岛妹妹”的西班牙馅饼。那段时间酷爱三毛笔下的西班牙，撒哈拉。也因此喜欢上了陈粒的《历历万乡》。不同于其它人对“港岛妹妹”">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/12/09/F8W0gJ.md.jpg">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html"/>
+  <link rel="canonical" href="http://www.thorns.cn/2018/12/09/这么多年你一个人 你一直在走.html"/>
 
 
 
 
 
-  <title>Windows下编译libcurl和使用 | Thorn's Blog</title>
+  <title>这么多年你一个人 一直在走 | Thorn's Blog</title>
   
 
 
@@ -284,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/04/01/Windows下编译libcurl.html">
+    <link itemprop="mainEntityOfPage" href="http://www.thorns.cn/2018/12/09/这么多年你一个人 你一直在走.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thorn">
@@ -301,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows下编译libcurl和使用</h1>
+          <h1 class="post-title" itemprop="name headline">这么多年你一个人 一直在走</h1>
         
 
         <div class="post-meta">
@@ -313,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T23:47:44+08:00">
-                2018-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-09T11:21:40+08:00">
+                2018-12-09
               </time>
             
 
@@ -336,8 +338,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络编程/" itemprop="url" rel="index">
-                    <span itemprop="name">网络编程</span>
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
                   </a>
                 </span>
 
@@ -355,8 +357,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2018/04/01/Windows下编译libcurl.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/04/01/Windows下编译libcurl.html" itemprop="commentsCount"></span>
+                <a href="/2018/12/09/这么多年你一个人 你一直在走.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/12/09/这么多年你一个人 你一直在走.html" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -378,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,183
+                  1,100
                 </span>
               
 
@@ -394,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -415,49 +417,17 @@
       
 
       
-        <h1 id="Windows下编译libcurl和使用"><a href="#Windows下编译libcurl和使用" class="headerlink" title="Windows下编译libcurl和使用"></a>Windows下编译libcurl和使用</h1><blockquote>
-<p>之前在Linux下使用过wget和curl,感觉使用起来都很简单,没什么困难之处,最近在windows下要使用libcurl,编译和使用的时候踩了不少坑,特此记录一下。</p>
+        <h1 id="这么多年你一个人-一直在走"><a href="#这么多年你一个人-一直在走" class="headerlink" title="这么多年你一个人 一直在走"></a>这么多年你一个人 一直在走</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>恩，昨天某个逼让我失了声感冒了。中午起床极度不爽，得以于此，借深圳余温未散抽空记录一下生活。  </p>
 </blockquote>
-<h1 id="认识libcurl"><a href="#认识libcurl" class="headerlink" title="认识libcurl"></a>认识libcurl</h1><p>libcurl是一个跨平台的开源的网络协议库,它支持http,https，ftp,telnet等协议,同样它支持https证书授权,使用起来简便不像其他的网络库一样复杂,想要知道更多关于libcurl的介绍,可以到官网<a href="https://cur.heaxx.se上去了解,在这里不做过多介绍。" target="_blank" rel="noopener">https://cur.heaxx.se上去了解,在这里不做过多介绍。</a></p>
-<h1 id="编译libcurl"><a href="#编译libcurl" class="headerlink" title="编译libcurl"></a>编译libcurl</h1><p>在编译libcurl之前,需要先做如下配置</p>
-<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><ul>
-<li>libcurl去官网下载源码 博主自己用的是curl-7.55.0 <a href="https://curl.haxx.se/download/curl-7.55.0.zip" target="_blank" rel="noopener">https://curl.haxx.se/download/curl-7.55.0.zip</a></li>
-<li>openssl,下载openssl-1.0.2k,1.1.0以后的文件安装方法都换了 <a href="https://www.openssl.org/source/" target="_blank" rel="noopener">https://www.openssl.org/source/</a></li>
-<li>下载perl解析器,编译依赖库openssl的时候需要用到<a href="https://www.activestate.com/activeperl/downloads" target="_blank" rel="noopener">https://www.activestate.com/activeperl/downloads</a></li>
-<li>zlib下载1.2.11 <a href="http://zlib.net" target="_blank" rel="noopener">http://zlib.net</a></li>
-</ul>
-<h3 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h3><p>为了不愿跟博主一样再踩过很多坑以后，才编译成功,在你的盘符根目录下新建一个文件夹名叫libcurl-ssl,将下载的三个压缩包解压到该目录。</p>
-<h3 id="ActiveState安装"><a href="#ActiveState安装" class="headerlink" title="ActiveState安装:"></a>ActiveState安装:</h3><p>执行安装程序,默认安装路径或者自定义路径都可以。</p>
-<h3 id="zlib编译"><a href="#zlib编译" class="headerlink" title="zlib编译"></a>zlib编译</h3><ol>
-<li>在你创建的文件夹下打开zlib-1.2.11\contrib\vstudio\vc14\zlibvc.sln,选择编译release版本,平台x86,x64自选。</li>
-<li>编译过后,会在x86或者x64文件夹下的ZlibDllRelease文件夹中生成zlibwapi.dll和zlibwapi.lib文件</li>
-</ol>
-<h3 id="openssl编译"><a href="#openssl编译" class="headerlink" title="openssl编译"></a>openssl编译</h3><p>这一步算是比较麻烦,也容易出错的地方,因为只能通过命令行来进行编译</p>
-<ol>
-<li>在开始菜单中找到自带的vs本机工具命令提示符,你的vs版本 和要进行编译的平台自己选择。我用的是vs2015 x86</li>
-<li>使用cd命令进入到你创建的文件夹下的openssl-1.0.2k中</li>
-<li>命令行输入perl Configure VC-WIN32 no-asm</li>
-<li>命令行输入ms\do_ms.bat</li>
-<li>命令行输入nmake -f ms/ntdll.mak</li>
-</ol>
-<p>耐心等待编译结束,抽根烟回来就编译好了,查看编译过程只要不出现”stop”,”error”的,就算成功了,如果出现错误的话,最好是把整个文件夹删了，重新解压编译,如果留有编译失败的文件，再进行编译的话它可能会提示”无法解析xxx”。</p>
-<p>接着将openssl-1.0.2k-&gt;inc32-&gt;openssl中所有的.h文件和openssl-1.0.2k-&gt;out32dll中的libeay32.lib、libeay32.dll、ssleay32.lib、ssleay32.dll一起复制到curl-7.55.0-&gt;lib-&gt;opensll中，如果lib文件夹下没有openssl,建立一个就可以了。</p>
-<h3 id="libcurl编译"><a href="#libcurl编译" class="headerlink" title="libcurl编译"></a>libcurl编译</h3><p>libcurl直接使用vs进行编译,编译平台选择DLL DEBUG-DLL OpenSSL</p>
-<ol>
-<li>打开curl-7.55.0-&gt;projects-&gt;Windows-&gt;VC14-&gt;curl-all.sln,可能vs会提示升级工程，确定即可。</li>
-<li>将libcurl设为启动项目,将libcurl的资源文件libcurl.rc移出。</li>
-<li>右键项目选择属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义,将”BUILDING_LIBCURL”改成”CURL_STATICLIB”。接口函数不会被声明为导出函数</li>
-<li>选择属性-&gt;链接器-&gt;输入-&gt;附加依赖项添加 libeay32.lib;ssleay32.lib;ws2_32.lib;wldap32.lib;前两个是为了openssl,后两个是curl必须依赖的。</li>
-</ol>
-<p>在编译成功后curl-7.55.0-&gt;build-&gt;Win32-&gt;VC14-&gt;DLL DEBUG-DLL OpenSSL文件夹中会生成有libcurld.lib和libcurld.dll(注意名字不是libcurl)</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ol>
-<li>创建一个控制台应用,例如项目名叫Test,在你的Test项目下创建include文件夹,将curl-7.55.0-&gt;include目录下的curl文件夹,复制过去。</li>
-<li>新建lib文件夹,将libcurl编译的libcurld.dll和libcurld.lib复制到lib。</li>
-<li>将libcurld.dll和之前OpenSSL生成的libeay32.lib、ssleay32.dll各复制一份到项目exe文件下,否则会报错。会提示定位不到序数,编译的过,运行不过。</li>
-<li>选择配置属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义,添加CURL_STATICLIB。</li>
-<li>属性中的附加包含目录，附加库目录都在代码实现</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&quot;curl/curl.h&quot;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#pragma comment(lib,&quot;libcurld.lib&quot;)</span><br><span class="line"></span><br><span class="line">size_t CallBack(void *ptr, size_t size, size_t nmemb, void *stream)</span><br><span class="line">&#123;</span><br><span class="line">    string *str = (string*)stream;</span><br><span class="line">    cout &lt;&lt; *str &lt;&lt; endl;</span><br><span class="line">    (*str).append((char*)ptr, size*nmemb);</span><br><span class="line">    return size * nmemb;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    easy_global_init(CURL_GLOBAL_ALL);</span><br><span class="line"></span><br><span class="line">    CURL *curl=easy_curl_init();</span><br><span class="line">    if(curl)</span><br><span class="line">    &#123;</span><br><span class="line">        curl_easy_setopt(curl,CURLOPT_URL,&quot;www.baidu.com&quot;);</span><br><span class="line"></span><br><span class="line">        string result;</span><br><span class="line">        //设置ssl</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, false);</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, false);</span><br><span class="line">        //开启调式信息</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CallBack);</span><br><span class="line">        curl_easy_setopt(curl,CURLOT_WRITEDATA,(void *)&amp;result);</span><br><span class="line">        curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);</span><br><span class="line">        curl_easy_setopt(curl,CURLOPT_TIMEOUT,3);</span><br><span class="line"></span><br><span class="line">        CURLcode res=curl_easy_perform(curl);</span><br><span class="line">        if(CURLE_OK!=res)</span><br><span class="line">        &#123;</span><br><span class="line">            cerr&lt;&lt;&quot;curl_easy_perform() failed&quot;&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;听他的歌时间不长，不到一年。忘记了从哪首开始，也不知道该在哪首结束。<br>&emsp;记忆中应该是在知晓了“祝星”这号人物的时候，才知道了“港岛妹妹”的西班牙馅饼。那段时间酷爱三毛笔下的西班牙，撒哈拉。也因此喜欢上了陈粒的《历历万乡》。不同于其它人对“港岛妹妹”的幻想，对“西班牙馅饼”的期待，我了解的“港岛妹妹”不过是某装逼犯的自淫，“西班牙馅饼”也不过是一张明信片。  </p>
+<h2 id="你说你遇见了一大堆奇怪的人"><a href="#你说你遇见了一大堆奇怪的人" class="headerlink" title="你说你遇见了一大堆奇怪的人"></a>你说你遇见了一大堆奇怪的人</h2><p>&emsp;时光就这样悄悄的流走，早高峰 晚高峰，有身穿OL装的白领正拿着粉底盒涂抹着她那疲惫的妆容，有一张张放声大笑的脸努力汲取着手机上短视频的笑点，也有戴着耳机或是手拿一部kindle为考研，为四六级而准备的人群……像是厌倦了一切变得麻木，低头听歌，听歌抬头，抬头下车。忽然在某一早晨，耳边隐约回响起一句“这么多年你一个人，一直在走，你说你遇见了一大堆奇怪的人，他们看上去好像都比你开心。”至此我明白，在那一座六朝古都，那座为一人种满了梧桐的城市，有一个独立的灵魂用它那低沉，嘶吼的声音在我耳边激荡盘旋，不能离去。从此，喜欢李志的歌一发不可收拾。</p>
+<h2 id="他们指向左，他们指向右"><a href="#他们指向左，他们指向右" class="headerlink" title="他们指向左，他们指向右"></a>他们指向左，他们指向右</h2><p>&emsp;有人说不能常听他的歌，会变得浑身充满负能量的人。对于这种说法，我身边的一位朋友，告诉我他“每天都是靠这逼的歌坚持下去的”，他的歌充满意义，带有思考。哈哈哈，写在这里的时候，真…<br>关于这首歌还是不提为好。有想研究的自个研究去。  </p>
+<p><a href="https://imgchr.com/i/F8W0gJ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/12/09/F8W0gJ.md.jpg" alt="F8W0gJ.md.jpg"></a></p>
+<h2 id="这个世界会好的"><a href="#这个世界会好的" class="headerlink" title="这个世界会好的"></a>这个世界会好的</h2><p>昨天他的压轴，一出场全场齐呼“逼哥牛逼，逼哥牛逼”！第一眼看到真人，一顶老旧的灰色帽子，一件老旧的灰色短袖(出发的时候朋友叫我带衣服，嫌麻烦没带，这两天深圳满30减15的温度活动不得不说很商业化，但看到他穿着一件短袖，“牛逼”！),一条老旧的蓝色牛仔，跟每天在视频上看到的并无差别。跟上面的图片搭配一模一样，心中不禁想这套衣服多久没换了？还好牙齿洗了。旁边的一位，额 怎么来形容呢，对于年龄比自己的大的吧 叫一声美女显得轻浮，说叫一个女人吧显得又太不会用词。那就叫旁边的一位可爱的女孩吧。《逃避可耻却有用》里面讲“可爱是最高级的形容词”，说的真对。一直在哪欢呼，在台底下跟逼哥抬扛，逼哥唱到“妈妈”的时候，她吼“恩，我在这里”，说到“一根烟的时候”，她回“是两根”，很喜欢这种氛围。全程一个小时下来，逼哥在结束开启了他的逼言逼语，后面的旗子挥舞着一个”B”字。他讲40年来改革开放，讲我们应该要谢谢，要学会感恩。嗯，这个世界会好的。</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>他就是b言b语，五块钱的发型，老套的衣服，一口大黄牙。却让人不反感，你知道他开始装逼了，听完了。你甚至都想去买两包南京(九五之尊)给他点着，既然这次没机会给你散烟，那就劳驾我拉着我的基友亲自去热河给你散一根南京的南京吧。   </p>
+<p>朋友对我刁侃道:你走在宋美龄大道上风花雪月，我走在义和五龙街感叹人生  </p>
+<p>我回:不是因为六朝古都，不是因为哪座种满了梧桐的城市。<br>我带你去南京听热河，带你去武林门听杭州。<br>自带装逼属性有没有！<br><img src="https://s1.ax1x.com/2018/12/09/F8oFgS.jpg" alt="F8oFgS.jpg"></p>
 
       
     </div>
@@ -473,12 +443,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/libcurl/" rel="tag"># libcurl</a>
-          
-        </div>
-      
 
       
       
@@ -488,15 +452,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/31/traits编程技法.html" rel="next" title="traits编程技法">
+                <i class="fa fa-chevron-left"></i> traits编程技法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/03/new.html" rel="prev" title="More Effective C++ 8:new和delete">
-                More Effective C++ 8:new和delete <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -644,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows下编译libcurl和使用"><span class="nav-number">1.</span> <span class="nav-text">Windows下编译libcurl和使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#认识libcurl"><span class="nav-number">2.</span> <span class="nav-text">认识libcurl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译libcurl"><span class="nav-number">3.</span> <span class="nav-text">编译libcurl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载文件"><span class="nav-number">3.1.</span> <span class="nav-text">下载文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置目录"><span class="nav-number">3.1.1.</span> <span class="nav-text">配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ActiveState安装"><span class="nav-number">3.1.2.</span> <span class="nav-text">ActiveState安装:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zlib编译"><span class="nav-number">3.1.3.</span> <span class="nav-text">zlib编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#openssl编译"><span class="nav-number">3.1.4.</span> <span class="nav-text">openssl编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#libcurl编译"><span class="nav-number">3.1.5.</span> <span class="nav-text">libcurl编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">3.2.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这么多年你一个人-一直在走"><span class="nav-number">1.</span> <span class="nav-text">这么多年你一个人 一直在走</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你说你遇见了一大堆奇怪的人"><span class="nav-number">1.2.</span> <span class="nav-text">你说你遇见了一大堆奇怪的人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#他们指向左，他们指向右"><span class="nav-number">1.3.</span> <span class="nav-text">他们指向左，他们指向右</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这个世界会好的"><span class="nav-number">1.4.</span> <span class="nav-text">这个世界会好的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结束"><span class="nav-number">1.5.</span> <span class="nav-text">结束</span></a></li></ol></li></ol></div>
             
 
           </div>
