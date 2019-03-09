@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.thorns.cn/2019/03/09/DCLP.html</loc>
-    <lastmod>2019-03-09T09:09:12.836Z</lastmod>
+    <lastmod>2019-03-09T09:21:08.315Z</lastmod>
     <data>
         <display>
         <title>C++ 单例模式 双检锁问题</title>
@@ -14,7 +14,7 @@
          
            
              
-              <breadCrumb title="网络编程" url="http://www.thorns.cn/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+              <breadCrumb title="C++" url="http://www.thorns.cn/categories/C/"/>
           
         </display>
     </data>
