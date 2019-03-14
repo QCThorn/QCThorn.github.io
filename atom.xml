@@ -64,29 +64,6 @@
   </entry>
   
   <entry>
-    <title>Two sum</title>
-    <link href="http://www.thorns.cn/2019/01/06/1.Two%20sum.html"/>
-    <id>http://www.thorns.cn/2019/01/06/1.Two sum.html</id>
-    <published>2019-01-05T17:47:47.000Z</published>
-    <updated>2019-01-09T15:19:41.356Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Two-sum"><a href="#Two-sum" class="headerlink" title="Two sum"></a>Two sum</h1><h2 id="原题描述"><a href="#原题描述" class="headerlink" title="原题描述:"></a>原题描述:</h2><blockquote><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p></blockquote><p>给定一个数组，返回两个数在数组中的索引，使它们相加等于给定的目标值。  </p><p>此题在leetcode上面难度为easy，解法有很多种。最先想到的就是两层循环直接遍历，不过这种时间复杂度为O(N2),可以使用hash_map将复杂度降低到O(N)，直接贴代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; twoSum(vector&lt;int&gt; &amp;nums,int target)</span><br><span class="line">&#123;</span><br><span class="line">    vector&lt;int&gt; result;</span><br><span class="line">    for (int i = 0;i&lt;nums.size();++i) &#123;</span><br><span class="line">        for (int j = i + 1；j &lt; nums.size();++j) &#123;</span><br><span class="line">            result.push_back(j);</span><br><span class="line">            result.push_back(i);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Two-sum&quot;&gt;&lt;a href=&quot;#Two-sum&quot; class=&quot;headerlink&quot; title=&quot;Two sum&quot;&gt;&lt;/a&gt;Two sum&lt;/h1&gt;&lt;h2 id=&quot;原题描述&quot;&gt;&lt;a href=&quot;#原题描述&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://www.thorns.cn/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Reverse interger</title>
     <link href="http://www.thorns.cn/2019/01/06/Reverse%20interger.html"/>
     <id>http://www.thorns.cn/2019/01/06/Reverse interger.html</id>
