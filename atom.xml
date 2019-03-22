@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.thorns.cn/"/>
-  <updated>2019-03-09T09:21:08.315Z</updated>
+  <updated>2019-03-22T16:44:56.904Z</updated>
   <id>http://www.thorns.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ARTS 打卡第一周</title>
+    <link href="http://www.thorns.cn/2019/03/23/ARTS_1.html"/>
+    <id>http://www.thorns.cn/2019/03/23/ARTS_1.html</id>
+    <published>2019-03-22T16:39:47.000Z</published>
+    <updated>2019-03-22T16:44:56.904Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>What’s ARTS？<br>A:Algorithm 每周至少做一个leetcode的算法题<br>R:Review 阅读并点评至少一遍英文技术文章<br>T:Tip 学习至少一个技术技巧<br>S:Share 分享一篇有观点和思考的技术文章  </p></blockquote><font size="5">ARTS打卡第一周</font><h2 id="1-Algorithm"><a href="#1-Algorithm" class="headerlink" title="1.Algorithm"></a>1.Algorithm</h2><p>&emsp;本周做了几个难度为Easy的算法，记录下。</p><h3 id="1-1-Palindromic-number"><a href="#1-1-Palindromic-number" class="headerlink" title="1.1 Palindromic number"></a>1.1 Palindromic number</h3><p>&emsp;判断一个数是否为回文数,方法很简单，只需要逆置前后判断是否相等就行了，不过还是有几个地方需要注意下   </p><p>&emsp;1. 负数、个位上为0的数都不是回文数<br>&emsp;2. 注意int类型的溢出  </p><p>&emsp;代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bool determine(int num)</span><br><span class="line">&#123;</span><br><span class="line">    if (num &lt; 0 ||(num != 0) &amp;&amp; num %10 ==0)</span><br><span class="line">        return false;</span><br><span class="line">    int x = 0;</span><br><span class="line">    while (num &gt; x) &#123;</span><br><span class="line">        x = num % 10 + x * 10;</span><br><span class="line">        num /= 10;</span><br><span class="line">    &#125;</span><br><span class="line">    return num == x || (x / 10 == y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="1-2-Roman-To-Intger"><a href="#1-2-Roman-To-Intger" class="headerlink" title="1.2 Roman To Intger"></a>1.2 Roman To Intger</h3><p>&emsp;将罗马数字转换为整数，此题感觉主要考查对罗马数字的转换熟悉不，当一个罗马数字前面部分小于后面部分，就是使用后面部分减去前面部分，否则就是加。第一时间想到的是直接使用个switch进行判断就好了,不过这样不够简洁，到最后发现有更简洁的办法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">int romantoint(string str)</span><br><span class="line">&#123;</span><br><span class="line">    int num[26] = &#123;0&#125;;</span><br><span class="line">    num[&apos;I&apos;-&apos;A&apos;] = 1;</span><br><span class="line">    num[&apos;V&apos;-&apos;A&apos;] = 5;</span><br><span class="line">    num[&apos;X&apos;-&apos;A&apos;] = 10;</span><br><span class="line">    num[&apos;L&apos;-&apos;A&apos;] = 50;</span><br><span class="line">    num[&apos;C&apos;-&apos;A&apos;] = 100;</span><br><span class="line">    num[&apos;D&apos;-&apos;A&apos;] = 500;</span><br><span class="line">    num[&apos;M&apos;-&apos;A&apos;] = 1000;</span><br><span class="line">    </span><br><span class="line">    int sum = 0;</span><br><span class="line">    for (size_t i = 0; i &lt; str.size(); ++i) &#123;</span><br><span class="line">        if (i+1 = str.size()) &#123;</span><br><span class="line">            sum += num[str[i]-&apos;A&apos;];</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        if (num[str[i]-&apos;A&apos;] &gt;= num[str[i+1]-&apos;A&apos;]) </span><br><span class="line">            sum += num[str[i]-&apos;A&apos;];</span><br><span class="line">        else &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            sum += num[str[i]-&apos;A&apos;] - num[str[i-1]-&apos;A&apos;];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="2-Review"><a href="#2-Review" class="headerlink" title="2.Review"></a>2.Review</h2><p>&emsp;<a href="https://medium.com/@calebleak/fast-virtual-functions-hacking-the-vtable-for-fun-and-profit-25c36409c5e0" target="_blank" rel="noopener">文章链接-需要能打开Google才能打开</a><br>&emsp;这篇文章讲述了C++虚函数的性能开销，从重载、override 多态一步步到虚函数，写的很详细。也从各方面分析了虚函数的开销，主要体现在虚函数调用需要间接跳转带来的分支预测成本和cache miss，文章中也讲了该如何尽可能的去最小化cache miss，通过虚函数分组的办法使用std::set来进行分组{函数指针,对象指针},通过分组将函数调用保存在缓存中最小化cache miss。</p><h2 id="3-Tip"><a href="#3-Tip" class="headerlink" title="3.Tip"></a>3.Tip</h2><p>&emsp;前面先说一下，感觉学习真的是一个不断完善、不断修剪的过程，本周学到的tips都跟上面讲的文章相关。看到文章中提到的cache miss，才知道cache miss是什么东西，也才学会使用linux下的性能调优工具perf.  </p><ol><li><p>perf list 查看perf能监控哪些性能指标 主要有三类指标<br>1.1 Hardware Event 是由PMU硬件产生的事件 比如cache命中<br>1.2 Software Event 由内核产生，比如进程切换,page-faults等<br>1.3 TracePoint Event 是核心中的静态 tracepoint 所触发的事件，这些 tracepoint 用來判断在程序执行时期核心的行为  </p></li><li><p>perf stat -e -L1-dcache-load-misses ./test  查看test程序的L1 cache miss的指标</p></li></ol><h2 id="4-Share"><a href="#4-Share" class="headerlink" title="4. Share"></a>4. Share</h2><p>关于技术文章,这周看的比较多的是耗子叔的文章，里面有一篇很有意思，讲的是“魔数 Ox5f3759df” ，主要讲的是求平方根，硬是看了好几遍，才看懂，后面又看到用牛顿迭代法求平方根，都很不错，分享给大家，有兴趣的小伙伴可以留言一起讨论讨论。<br><a href="https://matongxue.com/madocs/205.html" target="_blank" rel="noopener">如何通俗易懂地讲解牛顿迭代法–戳我打开</a>  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;What’s ARTS？&lt;br&gt;A:Algorithm 每周至少做一个leetcode的算法题&lt;br&gt;R:Review 阅读并点评至少一遍英文技术文章&lt;br&gt;T:Tip 学习至少一个技术技巧&lt;br&gt;S:Share 分享一篇有观点和思考的技术文章  
+      
+    
+    </summary>
+    
+      <category term="ARTS" scheme="http://www.thorns.cn/categories/ARTS/"/>
+    
+    
+      <category term="ARTS" scheme="http://www.thorns.cn/tags/ARTS/"/>
+    
+  </entry>
   
   <entry>
     <title>C++ 单例模式 双检锁问题</title>
