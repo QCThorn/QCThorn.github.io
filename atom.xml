@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2019-03-22T16:44:56.904Z</updated>
+  <updated>2019-03-31T13:48:16.597Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ARTS 第二周  欢迎交流讨论</title>
+    <link href="https://thorns.cn/2019/03/31/arts_2.html"/>
+    <id>https://thorns.cn/2019/03/31/arts_2.html</id>
+    <published>2019-03-31T11:33:47.000Z</published>
+    <updated>2019-03-31T13:48:16.597Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>What’s ARTS？<br>A:Algorithm 每周至少做一个leetcode的算法题<br>R:Review 阅读并点评至少一遍英文技术文章<br>T:Tip 学习至少一个技术技巧<br>S:Share 分享一篇有观点和思考的技术文章  </p></blockquote><h2 id="1-Algorithm"><a href="#1-Algorithm" class="headerlink" title="1.Algorithm"></a>1.Algorithm</h2><p>Longest Substring Without Repeating Characters，找出最长且不重复的子串<br>Example 1:   </p><blockquote><p>Input:&emsp;”abcabcbb”<br>Output:&emsp;”3”<br>Explanation: The answer is “abc”, with the length of 3</p></blockquote><p>Example 2:  </p><blockquote><p>Input:&emsp;”pwwkew”<br>Output:&emsp;”3”<br>Explanation: The answer is “wke”, with the length of 3.<br>             Note that the answer must be a substring, “pwke” is a subsequence and not a </p></blockquote><p>此题可以通过滑动窗口的思想来解决，代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int lengthOfLongestSubstring(string s)</span><br><span class="line">&#123;</span><br><span class="line">    vector&lt;int&gt; arr(128,-1);</span><br><span class="line">    int left = -1,res = 0;  //滑动窗口的左边和返回值</span><br><span class="line">    for (int i = 0;i &lt; s.size();++i) &#123;</span><br><span class="line">        left = max(left,arr[s[i]);</span><br><span class="line">        arr[s[i] = i;</span><br><span class="line">        res = max(res,i-left);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="2-Review"><a href="#2-Review" class="headerlink" title="2.Review"></a>2.Review</h2><p><a href="https://medium.com/@mr_mig_by/how-do-i-learn-some-functional-programming-3b28875a0bc3" target="_blank" rel="noopener">我该怎样去学习一些函数式编程?</a><br>本篇文章从OOD到函数式编程，没过于讲解技术上面的知识，不过作者推荐了一些文章讲述了该怎么去学习函数式编程，比如第一推荐了《Function JavaScript》,和使用underscore library，当熟练了这些下一步就可以深入。《JavaScript Allongé》,《Professor Frisby’s Mostly Adequate Guide to Functional Programming.》，并且还推荐了haskell。这篇文章主要是”Tell us how to learn it”，对函数式编程感兴趣的朋友可以点击阅读下</p><h2 id="3-Tip"><a href="#3-Tip" class="headerlink" title="3.Tip"></a>3.Tip</h2><p>关于Tip，说一下这周学的怎么计算子网地址，子网掩码和一个子网内主机数吧<br>例如一个IP地址是203.123.1.135,子网掩码是255.255.255.192   </p><p>那子网地址:就是用IP地址和子网掩码进行按位与运算，这里也就是132&amp;192=128，所以子网地址这个ip地址对应的子网地址是203.123.1.128</p><p>子网主机数:将子网掩码转成二进制,11111111.11111111.11111111.11000000 其中为1的表示网络位，为0表示主机位。主机位总共占6位，主机数就等于2^6-2=62，减去的2代表的是 子网地址和直接广播地址。</p><h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p>这周没什么分享的，因为最近这一两个月都太忙了，工作上、生活上，自我学习上都挺忙的，没有什么太值得分享的东西。倒是可以分享下之前感到很郁闷的东西，我朋友大概知道 相对于技术，我一直比较反感windows下mfc开发的那一套和不太愿意去接触web端的东西，不过最近工作上从duilib到mfc是干的真的很糟心，没有激情没有想去学习mfc的动力，所以以致于工作上出现很多问题。  </p><p>过渡了一个月，看到耗子叔的专栏，心态有了些变化。正如专栏里说的和我自己理解的，其实自己并不是反感windows，偏好linux开发。反而是由于linux简单，windows比较复杂产生的抵抗情绪。调节了一下心态，活到老，学到老。I’m not perfect.But I keep trying.</p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><blockquote><p>PS:能把心态调节过来，个人认为跟自己最近阅读的书籍有一定联系，所以在这里也推荐几本刚刚看完的书，希望小伙伴们能一起交流。  </p><p>《一个人的朝圣》 很多人认为是鸡汤，其实我并不这样认为，作者只不过是讲述了哈罗德一个人朝圣的故事与你我无关<br>《情人》  小波同志力荐的一本小说<br>《海边的卡夫卡》</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;What’s ARTS？&lt;br&gt;A:Algorithm 每周至少做一个leetcode的算法题&lt;br&gt;R:Review 阅读并点评至少一遍英文技术文章&lt;br&gt;T:Tip 学习至少一个技术技巧&lt;br&gt;S:Share 分享一篇有观点和思考的技术文章  
+      
+    
+    </summary>
+    
+      <category term="ARTS" scheme="https://thorns.cn/categories/ARTS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ARTS 打卡第一周</title>
