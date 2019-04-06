@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2019-03-31T13:48:16.597Z</updated>
+  <updated>2019-04-06T15:45:56.394Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ARTS 第三周</title>
+    <link href="https://thorns.cn/2019/04/06/ARTS_3.html"/>
+    <id>https://thorns.cn/2019/04/06/ARTS_3.html</id>
+    <published>2019-04-06T09:58:30.000Z</published>
+    <updated>2019-04-06T15:45:56.394Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>What’s ARTS？<br>A:Algorithm 每周至少做一个leetcode的算法题<br>R:Review 阅读并点评至少一遍英文技术文章<br>T:Tip 学习至少一个技术技巧<br>S:Share 分享一篇有观点和思考的技术文章  </p></blockquote><h2 id="1-Algorithm"><a href="#1-Algorithm" class="headerlink" title="1. Algorithm"></a>1. Algorithm</h2><blockquote><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br>给定一个字符串s，在s中找出最长回文子串。你可以假设s的最大长度为s。</p></blockquote><p>&emsp;这道题难度为Medium，有很多种解法,自己刚开始想到的是使用暴力法去暴力破解，不过这种方法的时间复杂度太高，先枚举所有子串，对每个子串进行判断是否为回文，此种方法的时间复杂度为O(n^3),在网上看到有人用动态规划的方法，遂学习了下动态规划，关于动态规划——想单独写一篇文章记录下，就不在这里介绍了。代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">string longestPalindrome(string s)</span><br><span class="line">&#123;</span><br><span class="line">    if (!s.size())</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    int len = s.size();</span><br><span class="line">    int left = 0,right = 0;</span><br><span class="line">    bool dp[len][len];</span><br><span class="line">    dp[0][0] = true;</span><br><span class="line">    for (int i = 1;i&lt;len;++i) &#123;</span><br><span class="line">        dp[i][i] = true;</span><br><span class="line">        dp[i][i-1] = true;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 2;i &lt;= len;++i) &#123;</span><br><span class="line">        for (int j = 0;j &lt;= len-i;++j) &#123;</span><br><span class="line">            if (s[j]==s[len-i-1] &amp;&amp; dp[j+1][j+i-2]) &#123;</span><br><span class="line">                dp[j][i+j-1] = true;</span><br><span class="line">                if (right-left+1 &lt; i) &#123;</span><br><span class="line">                    left = j;</span><br><span class="line">                    right = j+i-1</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return s.substr(left,right-left+1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="2-Review"><a href="#2-Review" class="headerlink" title="2. Review"></a>2. Review</h2><p>&emsp;先上链接<a href="https://www.codechef.com/wiki/tutorial-dynamic-programming" target="_blank" rel="noopener">Tutorial For Dynamic programming</a><br>&emsp;该文章讲解了Dynamic programming(动态规划)，分别举例说明了DP的两种形式</p><blockquote><p>&emsp;There are two ways of doing this.<br>&emsp;1.) Top-Down : Start solving the given problem by breaking it down. If you see that the problem has been solved already, then just return the saved answer. If it has not been solved, solve it and save the answer. This is usually easy to think of and very intuitive. This is referred to as Memoization.<br>&emsp;2.) Bottom-Up : Analyze the problem and see the order in which the sub-problems are solved and start solving from the trivial subproblem, up towards the given problem. In this process, it is guaranteed that the subproblems are solved before solving the problem. This is referred to as Dynamic Programming. </p></blockquote><h3 id="2-1-Memoization"><a href="#2-1-Memoization" class="headerlink" title="2.1 Memoization"></a>2.1 Memoization</h3><p>&emsp;第一种自顶向下的方法，通过分解来解决给定的问题。如果你发现问题已经解决，就只需要返回已保存的答案，如果尚未解决，请解决并保存答案。这种方法被称为Memoization(备忘录法)。  </p><blockquote><p>&emsp;Recursion uses the top-down approach to solve the problem i.e. It begin with core(main) problem then breaks it into subproblems and solve these subproblems similarily. In this approach same subproblem can occur multiple times and consume more CPU cycle ,hence increase the time complexity. Whereas in Dynamic programming same subproblem will not be solved multiple times but the prior result will be used to optimise the solution. eg. In fibonacci series   </p></blockquote><p>&emsp;自顶向上的方法通常使用递归求解，即它从核心(主要)问题开始，然后将其分解为子问题并解决这些类似的子问题。在这种方法中，相同的子问题可能会多次出现并消耗更多的CPU周期，因此这种解决方法增加时间复杂度</p><h3 id="2-2-Dynamic-Programming"><a href="#2-2-Dynamic-Programming" class="headerlink" title="2.2 Dynamic Programming"></a>2.2 Dynamic Programming</h3><p>&emsp;第二种自底向上的方法，分析问题并查看子问题被解决的顺序，并从子问题开始解决问题，在此过程中，保证在解决问题之前解决子问题，这就是所谓的动态规划。<br>&emsp;关于动态规划会在另一篇博客中详细的介绍、记录一下。  </p><h3 id="2-3-Remark"><a href="#2-3-Remark" class="headerlink" title="2.3 Remark"></a>2.3 Remark</h3><p>&emsp;这篇文章详细的介绍了动态规划的概念，并通过三个问题一一讲解了Memoization和DP这两种解决方法的区别，总的来说是一篇非常不错很适合像我这种之前都不知道DP的人，一看就能懂就会的文章。值得mark</p><h2 id="3-Tips"><a href="#3-Tips" class="headerlink" title="3. Tips"></a>3. Tips</h2><p>最近有使用到docker，在这里简单说下docker一些基础的操作命令  </p><ol><li>docker pull 从镜像仓库拉取指定镜像</li><li>docker images 查看本地所有镜像</li><li>docker rmi 删除本地一个或多个镜像</li><li>docker ps 查看正在运行的容器</li><li>docker ps -a 查看所有容器</li><li>docker run 运行容器,通常使用-it以交互模式运行容器</li><li>docker top 查看容器中运行的进程信息</li><li>docker start/stop/restart 对容器的操作</li><li>docker rm 删除一个容器或多个容器</li></ol><h2 id="4-Share"><a href="#4-Share" class="headerlink" title="4. Share"></a>4. Share</h2><p>分享的还是跟动态规划有关，这个使用漫画的形式，非常详细的介绍了动态规划，几乎纯小白一看就能懂的文章  <a href="https://zhuanlan.zhihu.com/p/31628866" target="_blank" rel="noopener">文章链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;What’s ARTS？&lt;br&gt;A:Algorithm 每周至少做一个leetcode的算法题&lt;br&gt;R:Review 阅读并点评至少一遍英文技术文章&lt;br&gt;T:Tip 学习至少一个技术技巧&lt;br&gt;S:Share 分享一篇有观点和思考的技术文章  
+      
+    
+    </summary>
+    
+      <category term="ARTS" scheme="https://thorns.cn/categories/ARTS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ARTS 第二周  欢迎交流讨论</title>
