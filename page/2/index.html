@@ -362,15 +362,14 @@
           
             
               <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/05/06/谈谈socks5协议和ss.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://thorns.cn/2018/05/06/谈谈socks5协议和ss.html" class="cy_cmt_count" data-xid="2018/05/06/谈谈socks5协议和ss.html" itemprop="commentsCount" ></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/06/谈谈socks5协议和ss.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/06/谈谈socks5协议和ss.html" itemprop="commentCount"></span>
                 </a>
-              
+              </span>
             
           
 
@@ -567,15 +566,14 @@
           
             
               <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/05/03/new.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://thorns.cn/2018/05/03/new.html" class="cy_cmt_count" data-xid="2018/05/03/new.html" itemprop="commentsCount" ></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/03/new.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/03/new.html" itemprop="commentCount"></span>
                 </a>
-              
+              </span>
             
           
 
@@ -771,15 +769,14 @@
           
             
               <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/04/01/Windows下编译libcurl.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://thorns.cn/2018/04/01/Windows下编译libcurl.html" class="cy_cmt_count" data-xid="2018/04/01/Windows下编译libcurl.html" itemprop="commentsCount" ></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/01/Windows下编译libcurl.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/01/Windows下编译libcurl.html" itemprop="commentCount"></span>
                 </a>
-              
+              </span>
             
           
 
@@ -1203,15 +1200,33 @@
 
 
 
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytMeCP7F"></script>
-  
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'FMLOTitr2U1Nn8Ry5STXB59u-gzGzoHsz',
+        appKey: 'JUfSuuyBpaaGdjy14IfKf7Fk',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
