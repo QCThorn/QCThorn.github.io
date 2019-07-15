@@ -89,17 +89,19 @@
 
 
 
-<meta name="description" content="C++ 单例模式和双检锁问题 最近在看《程序员的自我修养》这本书，从代码的编译到链接，从虚拟空间映射物理空间，到内存的分配无一不通通展开。以前对编译，链接不了解、疑惑的地方在看这本书时都有一种豁然开朗的感觉，特此记录一下。  &amp;emsp;在设计模式中，单例模式算的上最容易理解简单，且经常用到的一种模式。单例模式又分为“饿汉式”和“懒汉式”两种模式。    懒汉式:需要类的实例化时去判断唯一实例是否">
+<meta name="description" content="等他回来 我想等到他回来的那一天,那一天无论身在何处我都会奔着去看他的演出。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ 单例模式 双检锁问题">
-<meta property="og:url" content="https://thorns.cn/2019/03/09/DCLP.html">
+<meta property="og:title" content="等他回来">
+<meta property="og:url" content="https://thorns.cn/2019/07/15/waitforhimtocomeback.html">
 <meta property="og:site_name" content="Thorn&#39;s Blog">
-<meta property="og:description" content="C++ 单例模式和双检锁问题 最近在看《程序员的自我修养》这本书，从代码的编译到链接，从虚拟空间映射物理空间，到内存的分配无一不通通展开。以前对编译，链接不了解、疑惑的地方在看这本书时都有一种豁然开朗的感觉，特此记录一下。  &amp;emsp;在设计模式中，单例模式算的上最容易理解简单，且经常用到的一种模式。单例模式又分为“饿汉式”和“懒汉式”两种模式。    懒汉式:需要类的实例化时去判断唯一实例是否">
+<meta property="og:description" content="等他回来 我想等到他回来的那一天,那一天无论身在何处我都会奔着去看他的演出。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-09T09:21:08.315Z">
+<meta property="og:image" content="http://image.thorns.cn/1.jpg">
+<meta property="og:updated_time" content="2019-07-15T02:59:33.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ 单例模式 双检锁问题">
-<meta name="twitter:description" content="C++ 单例模式和双检锁问题 最近在看《程序员的自我修养》这本书，从代码的编译到链接，从虚拟空间映射物理空间，到内存的分配无一不通通展开。以前对编译，链接不了解、疑惑的地方在看这本书时都有一种豁然开朗的感觉，特此记录一下。  &amp;emsp;在设计模式中，单例模式算的上最容易理解简单，且经常用到的一种模式。单例模式又分为“饿汉式”和“懒汉式”两种模式。    懒汉式:需要类的实例化时去判断唯一实例是否">
+<meta name="twitter:title" content="等他回来">
+<meta name="twitter:description" content="等他回来 我想等到他回来的那一天,那一天无论身在何处我都会奔着去看他的演出。">
+<meta name="twitter:image" content="http://image.thorns.cn/1.jpg">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://thorns.cn/2019/03/09/DCLP.html"/>
+  <link rel="canonical" href="https://thorns.cn/2019/07/15/waitforhimtocomeback.html"/>
 
 
 
 
 
-  <title>C++ 单例模式 双检锁问题 | Thorn's Blog</title>
+  <title>等他回来 | Thorn's Blog</title>
   
 
 
@@ -294,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://thorns.cn/2019/03/09/DCLP.html">
+    <link itemprop="mainEntityOfPage" href="https://thorns.cn/2019/07/15/waitforhimtocomeback.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thorn">
@@ -311,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ 单例模式 双检锁问题</h1>
+          <h1 class="post-title" itemprop="name headline">等他回来</h1>
         
 
         <div class="post-meta">
@@ -323,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-09T14:35:40+08:00">
-                2019-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T12:30:30+08:00">
+                2019-07-15
               </time>
             
 
@@ -346,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/李志/" itemprop="url" rel="index">
+                    <span itemprop="name">李志</span>
                   </a>
                 </span>
 
@@ -364,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/09/DCLP.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/09/DCLP.html" itemprop="commentCount"></span>
+                <a href="/2019/07/15/waitforhimtocomeback.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/15/waitforhimtocomeback.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,7 +375,7 @@
 
           
           
-             <span id="/2019/03/09/DCLP.html" class="leancloud_visitors" data-flag-title="C++ 单例模式 双检锁问题">
+             <span id="/2019/07/15/waitforhimtocomeback.html" class="leancloud_visitors" data-flag-title="等他回来">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -398,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  863
+                  295
                 </span>
               
 
@@ -414,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -435,43 +437,15 @@
       
 
       
-        <h1 id="C-单例模式和双检锁问题"><a href="#C-单例模式和双检锁问题" class="headerlink" title="C++ 单例模式和双检锁问题"></a>C++ 单例模式和双检锁问题</h1><blockquote>
-<p>最近在看《程序员的自我修养》这本书，从代码的编译到链接，从虚拟空间映射物理空间，到内存的分配无一不通通展开。以前对编译，链接不了解、疑惑的地方在看这本书时都有一种豁然开朗的感觉，特此记录一下。</p>
+        <h1 id="等他回来"><a href="#等他回来" class="headerlink" title="等他回来"></a>等他回来</h1><blockquote>
+<p>我想等到他回来的那一天,那一天无论身在何处我都会奔着去看他的演出。</p>
 </blockquote>
-<p>&emsp;在设计模式中，单例模式算的上最容易理解简单，且经常用到的一种模式。单例模式又分为“饿汉式”和“懒汉式”两种模式。  </p>
-<ul>
-<li>懒汉式:需要类的实例化时去判断唯一实例是否被实例化，如果没有才会去创建实例</li>
-<li>饿汉式:在类定义的时候，唯一实例就已经进行实例化，后面需要用到时，直接返回唯一实例</li>
-</ul>
-<h2 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//单线程安全</span><br><span class="line">T *GetInstance()</span><br><span class="line">&#123;</span><br><span class="line">    if (pInst == NULL)</span><br><span class="line">        pInst = new T;</span><br><span class="line">    return pInst;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面代码，是单线程安全的，但并不是多线程安全。考虑一下有两个线程A和B，同时调用了GetInstance方法又恰巧检测到pInst为NULL，这时就出问题了，产生了两个实例，这并不是我们想要的。接下来，我们肯定会想到线程不安全加锁就完了嘛。  </p>
-<h2 id="双检锁-懒汉式"><a href="#双检锁-懒汉式" class="headerlink" title="双检锁-懒汉式"></a>双检锁-懒汉式</h2><p>下面是经典的加锁懒汉式实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">T *GetInstance()</span><br><span class="line">&#123;</span><br><span class="line">    //进行double-check,降低多线程每次调用lock带来的开销</span><br><span class="line">    if (pInst == NULL) &#123;</span><br><span class="line">        lock();</span><br><span class="line">        if (pInst == NULL)</span><br><span class="line">            pInst = new T;</span><br><span class="line">        unlock();      </span><br><span class="line">    &#125;</span><br><span class="line">    return pInst;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;这里的双重if检测(double-check)，是为了降低多线程每次调用lock带来的开销。也许当我们看到这样的代码时，认为并没有问题，实际上是有问题的，问题来自CPU的乱序执行。<br>&emsp;我们知道C++的new，包含了两个步骤   </p>
+<a id="more"></a>
+<p>&emsp;看到身边的朋友都在大喊“痛仰牛逼”，“裤子还是新的好”，“喜欢刺猬的鼓手”,心里面也一阵高兴，我也很喜欢这些，喜欢痛苦的信仰,喜欢没有理想的人不伤心开啤酒的那一下，喜欢刺猬的女鼓手摇滚范儿<br>&emsp;可心底总有一种莫名的情愫笼罩着我——那个男人还是没回来,哎…！让我打不起精神。看到朋友圈有人在分享这首歌,那首歌，我也想分享一首来着，一打开网易云搜索”李志”，查无此人。不知不觉间打开Chrome,想搜索一些东西,又很自然的输入了那个名字,又看了一遍维基百科的介绍,我也不知道从多久我开始这样,心里面难免有点失落和茫然…</p>
 <blockquote>
-<ol>
-<li>分配内存  </li>
-<li>调用构造函数  </li>
-</ol>
+<p>真想问一句“妈妈,这种失落会持久吗？”   </p>
 </blockquote>
-<p>&emsp;所以pInst=new T包含了三个步骤</p>
-<blockquote>
-<ol>
-<li>分配内存  </li>
-<li>调用构造函数</li>
-<li>将分配好的内存地址赋值给pInst </li>
-</ol>
-</blockquote>
-<p>事实上在cpu执行的时候，步骤2和3是可以颠倒的，他们看上去像这样  </p>
-<blockquote>
-<ol>
-<li>调用operator new()分配内存  </li>
-<li>使pInst指向分配好的内存</li>
-<li>调用构造函数constructor  </li>
-</ol>
-</blockquote>
-<p>那在多线程的情况下，就可能会出现A线程刚好分配好内存，并赋值给pInst，B线程再次调用GetInstance方法，此时pInst已经不为空了，所以就会出现将一个还并没有构造完毕的对象直接返回给用户使用，此时问题就出现了</p>
-<h2 id="解决方法，使用barrier指令"><a href="#解决方法，使用barrier指令" class="headerlink" title="解决方法，使用barrier指令"></a>解决方法，使用barrier指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#define barrier() __asm__ volatile (&quot;lwsync&quot;)</span><br><span class="line">T *GetInstance()</span><br><span class="line">&#123;</span><br><span class="line">    if (pInst == NULL) &#123;</span><br><span class="line">        lock();</span><br><span class="line">        if (pInst == NULL) &#123;</span><br><span class="line">            T *temp = new T;</span><br><span class="line">            barrier();</span><br><span class="line">            pInst = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        unlock();      </span><br><span class="line">    &#125;</span><br><span class="line">    return pInst;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;通常情况下是调用cpu提供的一条指令，这条指令的作用是会阻止cpu将该指令之前的指令交换到该指令之后，这条指令也通常被叫做barrier。 上面代码中的<strong>asm</strong>表示这个是一条汇编指令，volatile是可选的，如果用了它，则表示向编译器声明不允许对该汇编指令进行优化。lwsync是POWERPC提供的barrier指令。<br>&emsp;最后,在C++11中，关于C++双检锁的问题，已经完全解决了，有兴趣的朋友可以去看下C++11 DCLP</p>
+<p>所以呀,无论多久,多久都等,等他回来的第一场演出,我们一起相约2000.<br><img src="http://image.thorns.cn/1.jpg" alt=""></p>
 
       
     </div>
@@ -525,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/07/String to Integer.html" rel="next" title="String to Integer">
-                <i class="fa fa-chevron-left"></i> String to Integer
+              <a href="/2019/04/06/ARTS_3.html" rel="next" title="ARTS 第三周">
+                <i class="fa fa-chevron-left"></i> ARTS 第三周
               </a>
             
           </div>
@@ -534,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/23/ARTS_1.html" rel="prev" title="ARTS 打卡第一周">
-                ARTS 打卡第一周 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -707,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-单例模式和双检锁问题"><span class="nav-number">1.</span> <span class="nav-text">C++ 单例模式和双检锁问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#懒汉式"><span class="nav-number">1.1.</span> <span class="nav-text">懒汉式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双检锁-懒汉式"><span class="nav-number">1.2.</span> <span class="nav-text">双检锁-懒汉式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法，使用barrier指令"><span class="nav-number">1.3.</span> <span class="nav-text">解决方法，使用barrier指令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#等他回来"><span class="nav-number">1.</span> <span class="nav-text">等他回来</span></a></li></ol></div>
             
 
           </div>
