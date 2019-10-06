@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2019-08-29T05:35:16.981Z</updated>
+  <updated>2019-10-06T10:46:32.451Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次内存泄漏</title>
+    <link href="https://thorns.cn/2019/10/06/memory_leak.html"/>
+    <id>https://thorns.cn/2019/10/06/memory_leak.html</id>
+    <published>2019-10-06T10:42:00.000Z</published>
+    <updated>2019-10-06T10:46:32.451Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记一次内存泄漏"><a href="#记一次内存泄漏" class="headerlink" title="记一次内存泄漏"></a>记一次内存泄漏</h1><p>&emsp;最近在工作上遇到软件崩溃的问题，基于mfc的一个pc软件。苦苦调试了几天，输出日志，查看堆栈都没什么结果，只知道是内存泄漏引起的。<br>&emsp;昨天国庆假期，迫于无聊就去公司再次查看这个问题，使用windbg分析得知是字体资源太多导致，认真review代码了，发现问题原来是出在CreateFontIndirect这个函数上，软件中使用到ListBox需要针对不同类型的ListBox使用不同的字体，在类中声明了一个CFont的字体对象，当需要使用不同的字体时，自己直接又一次调用了CreateFontIndirect，并没有调用DeleteObject，所以导致了内存泄漏。</p><p>&emsp;因为自己并不是很熟悉Gdi+,所以才有这个问题发生，原来vc中的任何资源，字体、画笔、画刷、DC等都不能在同一个对象上二次创建，如果需要二次创建，必须将前次的销毁才行。特此记录一下。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;记一次内存泄漏&quot;&gt;&lt;a href=&quot;#记一次内存泄漏&quot; class=&quot;headerlink&quot; title=&quot;记一次内存泄漏&quot;&gt;&lt;/a&gt;记一次内存泄漏&lt;/h1&gt;&lt;p&gt;&amp;emsp;最近在工作上遇到软件崩溃的问题，基于mfc的一个pc软件。苦苦调试了几天，输出日志，查看
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://thorns.cn/categories/C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>生活没有答案，但总有下一站</title>
