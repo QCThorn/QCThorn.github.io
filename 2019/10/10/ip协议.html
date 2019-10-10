@@ -97,7 +97,7 @@
 <meta property="og:description" content="众所周知,IP是TCP/IP协议族中最为核心的协议，深入了解IP协议对我们实际开发、网络编程据有很大的帮助，遇到问题时，能知其然知其所以然，调试问题时能快速定位问题源并加以解决。  &amp;emsp;每次写socket编程时，遇到网络错误或者底层错误时，都是知其然不知其所以然，对于我这种喜欢捣鼓底层，喜欢明白事物本身实质的，显然是不行的，遂拿起了《TCP/IP详解》这三件套，书的作者W. Richar">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://image.thorns.cn/header.jpg">
-<meta property="og:updated_time" content="2019-10-10T16:04:52.825Z">
+<meta property="og:updated_time" content="2019-10-10T16:09:18.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IP协议详解">
 <meta name="twitter:description" content="众所周知,IP是TCP/IP协议族中最为核心的协议，深入了解IP协议对我们实际开发、网络编程据有很大的帮助，遇到问题时，能知其然知其所以然，调试问题时能快速定位问题源并加以解决。  &amp;emsp;每次写socket编程时，遇到网络错误或者底层错误时，都是知其然不知其所以然，对于我这种喜欢捣鼓底层，喜欢明白事物本身实质的，显然是不行的，遂拿起了《TCP/IP详解》这三件套，书的作者W. Richar">
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,675
+                  2,696
                 </span>
               
 
@@ -437,63 +437,7 @@
 <h3 id="IP-网际协议"><a href="#IP-网际协议" class="headerlink" title="IP:网际协议"></a>IP:网际协议</h3><p>&emsp;IP是TCP/IP协议族的核心，它位于TCP/IP四层模型的网络层，负责Internet网络之间的通信，并定义了数据传输时的基本单元和格式，还定义了数据包的递交方法和路由选择。<br>&emsp; 1.IP是面向无连接的传输服务，不维护IP数据报发送后的状态信息，数据报在传输过程可能丢失，统一交给上层自己去维护<br>&emsp; 2.IP是不可靠的数据投递服务，IP协议本身没有办法确认发送的报文是否被正确接受，数据报可能在线路延迟、路由错误、分片、重组等过程中损坏，IP不检测这些错误，也没有可靠的机制来通知发送方或接收方  </p>
 <h4 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1. IP地址"></a>1. IP地址</h4><p>&emsp;IP地址是一个32位的二进制地址，由网络号和主机号组成。为了方便记忆，将它们分为4组，每组8位由小数点分开，这种表示方法叫做点分十进制，例如192.168.1.1。</p>
 <h5 id="1-1-IP地址类别"><a href="#1-1-IP地址类别" class="headerlink" title="1.1 IP地址类别"></a>1.1 IP地址类别</h5><p>&emsp;IP地址分为五类，A类，B类，C类，D类，E类  </p>
-<style>
-table th:fourth-of-type {
-    width: 50px;
-}
-</style>
-
-<table>
-<thead>
-<tr>
-<th>类别</th>
-<th>网段</th>
-<th>区分</th>
-<th>地址范围&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>网络数</th>
-<th>主机数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A类</td>
-<td>0-127</td>
-<td>首位为0</td>
-<td>1.0.0.1～127.255.255.254</td>
-<td>126（2^7-2）</td>
-<td>2^24-2</td>
-</tr>
-<tr>
-<td>B类</td>
-<td>128-191</td>
-<td>首位为10</td>
-<td>128.0.0.1～191.255.255.254</td>
-<td>16383(2^14-1)</td>
-<td>2^16-2  </td>
-</tr>
-<tr>
-<td>C类</td>
-<td>192-223</td>
-<td>首位为110</td>
-<td>192.0.0.1～223.255.255.254</td>
-<td>2^24-1</td>
-<td>2^8-2</td>
-</tr>
-<tr>
-<td>D类</td>
-<td>224-239</td>
-<td>首位为1110</td>
-<td>224.0.0.1~239.255.255.254</td>
-<td>不区分网络地址和主机地址</td>
-</tr>
-<tr>
-<td>E类</td>
-<td>240～255</td>
-<td>首位为11110</td>
-<td>保留地址</td>
-</tr>
-</tbody>
-</table>
+<p><style><br>table th:nth-child(4) {<br>    width: 50px;<br>}<br></style><br>| 类别 | 网段 | 区分 | 地址范围|  网络数 |主机数<br>| —- | —- | —- | —- | —- |—-|<br>|A类|0-127|首位为0| 1.0.0.1～127.255.255.254|126（2^7-2）|2^24-2<br>|B类|128-191|首位为10|128.0.0.1～191.255.255.254|16383(2^14-1)|2^16-2<br>|C类|192-223|首位为110|192.0.0.1～223.255.255.254|2^24-1|2^8-2<br>|D类|224-239|首位为1110|224.0.0.1~239.255.255.254|不区分网络地址和主机地址|<br>|E类|240～255|首位为11110|保留地址|  </p>
 <ul>
 <li>A类：由一个字节的网络号和三个字节的主机号组成，默认子网掩码(255.0.0.0)，最高位必须为0，网络数减2是因为  <ul>
 <li>1.网络号全为0的IP地址为保留地址，表示本网络</li>
