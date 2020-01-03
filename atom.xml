@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2019-12-22T15:39:35.828Z</updated>
+  <updated>2020-01-03T15:38:55.887Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019年度总结</title>
+    <link href="https://thorns.cn/2019/12/30/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93.html"/>
+    <id>https://thorns.cn/2019/12/30/2019年度总结.html</id>
+    <published>2019-12-30T04:30:30.000Z</published>
+    <updated>2020-01-03T15:38:55.887Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>2019年过去了，不管它是一首诗，还是一坨狗屎，不打算去怀念它。</p></blockquote><blockquote><p>我们总是不停的在审查、检视别人，却忘了自己。</p></blockquote><p>&emsp;一年又晃过，时光就这样悄悄溜走，好像什么也没做，好像什么也没留下，就这样看着它流走……</p><h3 id="两则消息"><a href="#两则消息" class="headerlink" title="两则消息"></a>两则消息</h3><p>&emsp;似乎总是这样，好永远伴随着坏，坏陪着好，形影不离。<br>&emsp;先对自己说说坏消息吧，给我启蒙的那个人，被一则通告从此消失在视野，给予我音乐的启蒙，摇滚的启蒙，改变了我对这个世界的认知的那位李志先生，成为了一个被禁忌的词语，也罢，今晚没有想写些他的情绪，在茫茫的互联网浪海中成为一片叶子，下沉在深海中，不被人捞起，就不提了罢。</p><p>&emsp; 好消息就是跟她在一起了，很幸运也很感谢她，几年来一直陪着我，难过的时候晚上一个人听歌的时候。记得某天跟她开玩笑说了一句  “真羡慕你这么年轻，就认识我了” </p><p>她回了一句 “很感谢你，出现在我的青春年华里”，我记得。我喜欢的就是最好的，她说 “都挡不住一句我喜欢呀。”</p><p><img src="http://image.thorns.cn/WechatIMG329.jpeg" alt=""></p><p><img src="http://image.thorns.cn/mygirl.jpeg" alt=""></p><h3 id="年内回忆"><a href="#年内回忆" class="headerlink" title="年内回忆"></a>年内回忆</h3><p>2月份年初，海南骑行了一圈，独自一人过了一个帐篷里面的大年三十，总算体会到了不回家过年的感觉。那感觉就是”——那一刻，孤独的像只鬼，快乐是他们的，从晚上九点到十二点的跨年倒计时，一个人在帐篷里听着他们的欢呼，第二天看完海边的日出，立马买了一张回家的机票，值得回忆”</p><p>4月份初，喜欢的歌手被封杀，那一个月每天都陷入反思，感叹他们到底在害怕什么？从歌曲到个人被封杀的透透彻彻</p><p>8月到9月，打算不想去想那么多，准备辞职，好好放松一下，骑行环了小半个新疆，从赛里木湖到伊昭公路至独库公路和最好的沙漠公路。</p><p>10月份初，尝试了第一次重装徒步，跟朋友徒步香港麦理浩径，第一次主动放弃旅程，没坚持下来。</p><p>11月中，和她在一起了，那一刻开心的像个孩子，沉溺于其中</p><p>12月底，请假，和她一起玩了三天，抵得上以上所有回忆。</p><p>一年可真快的，翻翻去年的总结，相隔三百六十几天，很不真实。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>&emsp;去年从入职，一直在现在，这期间在这家公司主要负责做pc端产品的mfc，duilib，.net的界面开发，没有太大的挑战难度，当然也没有太顺手，毕竟自己想做的不是界面开发，自我感觉这一年有很多地方做的很不足，从需求到设计，从开发到测试，都没有很尽心尽力，也跟自己这一年的心情状态有很大关系，(少听李志，少听李志，听李志 重要的事情说三遍)。</p><p>&emsp;自我评价，这一年在工作上很失败，每天无所事事，成天还没完成手头上的工作就混日子。用失败来形容是因为，自发觉得无论是在公司给老板做产品也好，还是做自己的产品，都是为了自己工作，并不是为别人，如果除开那点微薄的工资收入外，没有学习到更多的专业技能，收获到更多的工作经验，是不足以用好来形容今年的工作。  </p><p>在这一点上之前自己一直有一个误区，或许是年轻的缘故，都喜欢追求潮流的东西，技术上也同理，总觉的那些用最前沿的技术就很厉害，越能学到东西，反观那些传统的项目，十几年甚至二十几年前的项目，毫无价值，所以在公司19年这段期间使用mfc做东西就做的很不尽人意，当boss有一次找我聊天谈到这个问题，我才意识到有时候某项技术在特定的市场是挥之不去的，感谢他让我明白了 “技术只是一种实现，产品和市场才是立足之本”，当然也免不了这么快的去接纳，还是会有排斥，但现在我在工作之余使用手机上 电脑上的软件时，更多的并不会去关注这个亮点是怎么实现的，而是喜欢关注产品本身和做对比，例如tg:wechat,spotify:网易云音乐:qq音乐:apple music,有很多东西，一对比就相形见绌。</p><h4 id="缺点与不足"><a href="#缺点与不足" class="headerlink" title="缺点与不足"></a>缺点与不足</h4><p>&emsp;1.自我调节能力弱，喜欢把生活的状态和情绪带到工作中</p><p>​    2.不太愿意去接纳不感冒的技术，例如一些很老的技术mfc，和一些前端的技术</p><p>​    3.自制力不强，喜欢逃避麻烦的事物 (当我想看一本有关技术书籍的时候，总会找一本文学类的书籍看以安慰自己)</p><p>​    4.沟通时，表达能力总不能一句点题</p><p>​    5.生活习惯</p><h3 id="19年目标实现"><a href="#19年目标实现" class="headerlink" title="19年目标实现"></a>19年目标实现</h3><p>&emsp;先回望一下19年的小目标，很多时候只是把目标列在了这里，却并没有放在心上，没有给自己紧迫感和压力，一年结束都忘了当时定下的目标</p><blockquote><p>1.通过不断学习，技术上能得到一个质的提升   (x)<br>2.培养一门业余技能   (x 今年尝试的有很多，吉他，摄影，摄影又重新拿起了吃灰了许久的单反还在慢慢学习中)<br>3.提高理财意识，存款到达心中的目标  (v 勉强能达到，毕竟自己也没有一个大概的目标 :  )笑 )<br>4.阅读累计20本书  (v 这个算超标了，把用来看技术书籍的时间都用来看其它书籍了)<br>5.坚持两周写一篇博客  (v 完全猝)<br>6.芭提雅跳伞  (x )<br>7.西藏骑行  (v 虽然没去西藏，但去环了一次新疆，也能算达到了)<br>8.去听叁叁肆现场一次   (x …因不可扛因素导致实现不了)  </p></blockquote><h3 id="读过的书籍"><a href="#读过的书籍" class="headerlink" title="读过的书籍"></a>读过的书籍</h3><ol><li>《沉默的大多数》王小波&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——终于沦为沉默的大多数               </li><li>《情人》玛格丽特·杜拉斯 &emsp;&emsp;&emsp;&emsp;&emsp;         ——我已经老了</li><li>《而已集》鲁迅 &emsp;&emsp;&emsp;&emsp;——人类的悲欢并不相通，我只觉得他们吵闹</li><li>《呐喊》鲁迅 &emsp;&emsp;&emsp;&emsp;——他们应该有新的生活，为我们所未经生活过的</li><li>《刀锋》毛姆 &emsp;&emsp;&emsp;&emsp;——剃刀锋利,越之不易。智者有云,得渡人稀。</li><li>《沉思录》</li><li>《革命时期的爱情》</li><li>《耳朵借我》</li><li>《地下乡愁蓝调》</li><li>《1984》</li><li>《城堡》</li></ol><h3 id="看过的电影"><a href="#看过的电影" class="headerlink" title="看过的电影"></a>看过的电影</h3><ol><li>《教父三部曲》</li><li>《涉足荒野》</li><li>《罗马假日》</li><li>《何以为家》</li><li>《霸王别姬》</li><li>《美丽人生》</li><li>《辛德勒的名单》</li></ol><h3 id="2019目标"><a href="#2019目标" class="headerlink" title="2019目标"></a>2019目标</h3><ol><li>培养业余技能</li><li>存钱！</li><li>刷leetcode 400道题</li><li>累计阅读40本书籍</li><li>学习Java和Go</li><li>徒步尼泊尔EBC环线</li><li>带她去看一场许嵩的演唱会</li></ol><p>​    </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;2019年过去了，不管它是一首诗，还是一坨狗屎，不打算去怀念它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们总是不停的在审查、检视别人，却忘了自己。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;emsp;一年又晃过，时
+      
+    
+    </summary>
+    
+      <category term="life" scheme="https://thorns.cn/categories/life/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>1.Two sum</title>
@@ -466,32 +495,6 @@
     
     
       <category term="Mongodb" scheme="https://thorns.cn/tags/Mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谈谈ss和socks5协议</title>
-    <link href="https://thorns.cn/2018/05/06/%E8%B0%88%E8%B0%88socks5%E5%8D%8F%E8%AE%AE%E5%92%8Css.html"/>
-    <id>https://thorns.cn/2018/05/06/谈谈socks5协议和ss.html</id>
-    <published>2018-05-06T08:12:32.000Z</published>
-    <updated>2018-05-06T08:20:28.008Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ss和socks5协议"><a href="#ss和socks5协议" class="headerlink" title="ss和socks5协议"></a>ss和socks5协议</h1><blockquote><p>本文首发于个人博客:<a href="http://www.thorns.cn" target="_blank" rel="noopener">www.thorns.cn</a></p></blockquote><p>前言:由于最近公司需要一个自己的代理服务,所以花了一周的时间去研究了下shadowsocks实现的原理,以及socks5协议。</p><h1 id="认识Shadowsocks"><a href="#认识Shadowsocks" class="headerlink" title="认识Shadowsocks"></a>认识Shadowsocks</h1><p>Shadowsocks是一个能骗过GFW的网络代理工具,它把我们要访问的数据请求,比如google,youtube，facebook…进行加密后传输到GFW外的服务端,由服务端去访问目标站点再加密返回给我们,网络中的GFW由于不知道传输的原内容是什么只好放行,于是就完成了我们所谓的”翻墙”。  </p><h1 id="Shadowsocks原理"><a href="#Shadowsocks原理" class="headerlink" title="Shadowsocks原理"></a>Shadowsocks原理</h1><p>SS(Shadowsocks)由两部分组成,运行在本地的ss-local和防火墙之外服务器上的ss-server。ss-local的职责是在本机启动和监听一个服务,本地软件的网络请求都会先发送到ss-local,ss-local收到来自本地软件的网络请求后,把要传输的原数据根据用户配置的加密方法和密码进行加密,再转发到服务端。ss-server的职责是在墙外服务器启动和监听一个服务,当服务端收到ss-local转发过来的数据时,会根据用户配置的加密方法和密码对数据进行解密,同时还会解socks5协议，然后会把解密后的数据转发到真正的请求目标服务地址(例如Google),以下是整个流程图.<br><img src="/images/liucheng.png" alt="avatar"></p><h1 id="Socks5协议介绍"><a href="#Socks5协议介绍" class="headerlink" title="Socks5协议介绍"></a>Socks5协议介绍</h1><p>SS的数据传输是建立在socks5协议之上的，Socks5是TCP/IP的网络代理协议，socks5有协商认证请求部分,个人更喜欢把他叫做Protocol Handshake。</p><h2 id="协商版本和验证方法"><a href="#协商版本和验证方法" class="headerlink" title="协商版本和验证方法"></a>协商版本和验证方法</h2><p>当我们的客户端向服务端建立连接之后,客户端就会向服务端进行协商,发送的数据包如下:<br><img src="/images/xs.png" alt="avatar"></p><p>其中各字段的含义如下:<br>VER:代表SOCKS的版本,SOCKS5 默认为0x05,固定长度一个字节。<br>NMETHODS:表示第三个字段的长度(也就是有几种认证方法),长度也是一个字节<br>METHODS:表示客户端支持的验证方式,可以有多种,长度1-255字节。<br>支持的验证方式有:  </p><ul><li>0x00:NO AUTHENTICATION REQUIRED（不需要验证）  </li><li>0x01:GSSAPI (通用安全服务应用程序接口)  </li><li>0x02:USERNAME/PASSWD(用户名密码)  </li><li>0x03:IANA ASSIGNED(至 0x’7F’ IANA 分配)</li><li>0x80:RESERVED FOR PRIVATE METHODS(至 0x’FE’ 私人方法保留)  </li><li>0xff:NO ACCEPTABLE METHODS(没有可接受的方法)<br>当服务端收到客户端的验证机信息之后，就要回应客户端提供哪种验证方式的信息。服务端回应的包格式如下:<br><img src="/images/xs1.png" alt="avatar"></li><li>VER:代表SOCKS的版本,SOCKS5默认为0x05,长度一个字节。  </li><li>METHOD:代表服务端回应客户端需要哪种验证方式,可以为上面六种验证方式之一   </li></ul><p>举个例子,比如客户端发送的包是 0x05 0x01 0x02，如果服务端不需要验证就会返回0X05 0X00,需要验证就会返回0x05 0x02,接下来客户端就需要进行认证这一步，也就是把用户名和密码发送给服务端进行认证,在这里我就不介绍认证这一步了,直接说请求这一步。</p><h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><p>客户端发起的连接由服务端验证通过后,客户端下一步就应该把要访问的目的网站地址给服务端,服务端得到地址后再去请求真正的目标服务。这一步客户端需要发送的包格式如下:<br><img src="/images/re.png" alt="avatar"></p><p>各个字段含义如下:</p><ul><li>VER:socks的版本  </li><li>CMD:代表客户端请求的类型，值长度1个字节,有三种类型:  <ol><li>Connect: 0x01  </li><li>BIND: 0x02</li><li>UDP: 0x03</li></ol></li><li>RSV:保留字段,默认0x00,长度1个字节</li><li>ATYP:代表请求的远程服务器地址类型,长度1个字节，三种类型:<ol><li>IPV4: 0x01</li><li>IPV6: 0x04</li><li>DOMAINNAME: 0x03</li></ol></li><li>DST.ADDR:代表远程服务器的地址,根据ATYP进行解析,值长度不定  </li><li>DST.PORT:代表远程服务器的端口,值长度2个字节</li></ul><p>服务端再收到客户端告诉的目标服务地址后，便和目标进行连接,不管成功与否,服务器都应该把连接的结果告诉客户端.如果连接成功的情况下,服务端返回的包格式如下:<br><img src="/images/sre.png" alt="avatar"></p><p>各个字段含义如下:</p><ul><li>REP:代表响应码,值长度1个字节，有如下类型<ol><li>0x00:succeeded(成功)</li><li>0x01:general SOCKS server failure(socks5服务器失败)</li><li>0x02:connection not allowed by ruleset</li><li>0x03:Network unreachable(网络无法访问)</li><li>0x04:Host unreachable(主机无法访问)</li><li>0x05:Connection refused(拒绝连接)</li><li>0x06:TTL expired(TTL 超时)</li><li>0x07:Command not supported(命令不支持)</li><li>0x08:Address type not supported(地址类型不受支持)</li><li>0x09:to 0xFF unassigned</li></ol></li><li>RSV:保留字,值长度一字节  </li><li>BND.ADDR:表示绑定地址,值长度不定  </li><li>BND.PORT:表示绑定端口,值长度2字节  </li></ul><h2 id="数据转发"><a href="#数据转发" class="headerlink" title="数据转发"></a>数据转发</h2><p>客户端在收到来自服务器成功的响应后，就会开始发送数据给本地代理，本地代理加密后进行转发给服务端,服务端解密之后访问最终目标服务。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SOCKS5协议的目的就是为了把原本应该在本机直接请求目标服务的流程,放到了服务端去代理 客户端访问.运行流程如下:</p><p>本地代理和服务端协商认证请求<br>本地代理告诉服务端目标服务的地址<br>服务端去访问目标服务,成功后告诉本地代理<br>本机开始发送原本应发送到目标服务的数据给服务端,由服务端完成数据转发  </p><p>注:以上内容有很多部分都是参考RFC1928,和其他博主发表的博文，借鉴而来。如果感觉有什么地方不对或者不同见解的，都可以提出争议,以立即改正。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;ss和socks5协议&quot;&gt;&lt;a href=&quot;#ss和socks5协议&quot; class=&quot;headerlink&quot; title=&quot;ss和socks5协议&quot;&gt;&lt;/a&gt;ss和socks5协议&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;本文首发于个人博客:&lt;a href=&quot;ht
-      
-    
-    </summary>
-    
-      <category term="网络编程" scheme="https://thorns.cn/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="socks" scheme="https://thorns.cn/tags/socks/"/>
     
   </entry>
   
