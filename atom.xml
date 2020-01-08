@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2020-01-04T07:36:42.999Z</updated>
+  <updated>2020-01-08T10:26:38.100Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Imagine</title>
+    <link href="https://thorns.cn/2020/01/08/imagine.html"/>
+    <id>https://thorns.cn/2020/01/08/imagine.html</id>
+    <published>2020-01-08T10:23:00.000Z</published>
+    <updated>2020-01-08T10:26:38.100Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Imagine"><a href="#Imagine" class="headerlink" title="Imagine"></a>Imagine</h2><blockquote><p>给那些在战争中的小孩儿  </p></blockquote><p>《Imagine》  ——John Lennon</p><p>Imagine theres no heaven</p><p>Its easy if you try</p><p>No hell below us</p><p>Above us only sky</p><p>Imagine all the people</p><p>Living for today</p><p>Imagine theres no countries </p><p>It isn’t hard to do</p><p>Nothing to kill or die for</p><p>And no religion too</p><p>Imagine all the people</p><p>Living life in peace</p><p>You may say I’m a dreamer</p><p>But I’m not the only one</p><p>I hope someday you’ll join us</p><p>And the world will be as one</p><p>Imagine no possessions</p><p>I wonder if you can</p><p>No need for greed or hunger</p><p>A brotherhood of man</p><p>Imagine all the people</p><p>Sharing all the world…</p><p>You may say I’m a dreamer</p><p>But I’m not the only one</p><p>I hope someday you’ll join us</p><p>And the world will be as one</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Imagine&quot;&gt;&lt;a href=&quot;#Imagine&quot; class=&quot;headerlink&quot; title=&quot;Imagine&quot;&gt;&lt;/a&gt;Imagine&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;给那些在战争中的小孩儿  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;《I
+      
+    
+    </summary>
+    
+      <category term="Life" scheme="https://thorns.cn/categories/Life/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2019年度总结</title>
@@ -470,31 +496,6 @@
     
     
       <category term="STL traits" scheme="https://thorns.cn/tags/STL-traits/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu安装Mongodb及配置</title>
-    <link href="https://thorns.cn/2018/08/23/ubuntu%E5%AE%89%E8%A3%85Mongodb%E5%8F%8A%E9%85%8D%E7%BD%AE.html"/>
-    <id>https://thorns.cn/2018/08/23/ubuntu安装Mongodb及配置.html</id>
-    <published>2018-08-23T02:58:20.000Z</published>
-    <updated>2018-08-24T04:10:58.680Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ubuntu安装Mongodb及配置"><a href="#ubuntu安装Mongodb及配置" class="headerlink" title="ubuntu安装Mongodb及配置"></a>ubuntu安装Mongodb及配置</h1><p>官方下载地址: <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz" target="_blank" rel="noopener">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz</a>  </p><p>使用curl进行下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-4.0.1.tgz</span><br></pre></td></tr></table></figure></p><p>解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-linux-x86_64-ubuntu1404-4.0.1.tgz</span><br></pre></td></tr></table></figure></p><p>移动到用户local目录下(可自定义)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv mongodb-linux-x86_64-ubuntu1404-4.0.1.tgz /usr/local/mongodb</span><br></pre></td></tr></table></figure></p><p>创建数据库目录和日志目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /data/db</span><br><span class="line">sudo mkdir /data/logs</span><br></pre></td></tr></table></figure></p><p>创建配置文件,启动mongod时需要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/mongodb/bin/mongodb.conf #将配置文件放在mongodb/bin目录下</span><br><span class="line"></span><br><span class="line">dbpath=/data/db/    #db路径</span><br><span class="line">logpath=/data/logs/mongodb.log  #log路径</span><br><span class="line">fork=true   #以后台模式mongos进程  </span><br><span class="line">port=27017</span><br></pre></td></tr></table></figure></p><p>配置mongodb环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line">#在最后添加</span><br><span class="line">export PATH=$PATH:/usr/local/mongodb/bin</span><br><span class="line">#退出使用source命令使设置生效</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure></p><p>接下来就可以开启mongodb服务了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongod -f /usr/local/mongodb/bin/mongodb.conf</span><br><span class="line">#使用mongo连接服务</span><br><span class="line">mongo</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;ubuntu安装Mongodb及配置&quot;&gt;&lt;a href=&quot;#ubuntu安装Mongodb及配置&quot; class=&quot;headerlink&quot; title=&quot;ubuntu安装Mongodb及配置&quot;&gt;&lt;/a&gt;ubuntu安装Mongodb及配置&lt;/h1&gt;&lt;p&gt;官方下载地址
-      
-    
-    </summary>
-    
-      <category term="Mongodb" scheme="https://thorns.cn/categories/Mongodb/"/>
-    
-    
-      <category term="Mongodb" scheme="https://thorns.cn/tags/Mongodb/"/>
     
   </entry>
   
