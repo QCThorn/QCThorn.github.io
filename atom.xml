@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2020-01-08T10:26:38.100Z</updated>
+  <updated>2020-01-09T15:20:15.167Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20.Vaild Parentheses</title>
+    <link href="https://thorns.cn/2020/01/09/leetcode_20.html"/>
+    <id>https://thorns.cn/2020/01/09/leetcode_20.html</id>
+    <published>2020-01-09T03:19:00.000Z</published>
+    <updated>2020-01-09T15:20:15.167Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="leetcode-20-Vaild-Parentheses"><a href="#leetcode-20-Vaild-Parentheses" class="headerlink" title="leetcode -20.Vaild Parentheses"></a>leetcode -20.Vaild Parentheses</h2><p>&emsp;题目:给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p><p>有效字符串需满足：</p><p>​    1.左括号必须用相同类型的右括号闭合。<br>​    2.左括号必须以正确的顺序闭合。<br>​    3.注意空字符串可被认为是有效字符串。  </p><p>解题思路：可以用stack的先进后出的特性和map来解决此题，使用map存放所有(),[],{},需要注意的是将反向的括号作为键，正向的作为值，遍历字符串，判断字符是否正向，如果是正向的就放入到stack中，如果不是判断栈里面的元素是否等于当前遍历的字符，不等于说明该字符串就是无效的。</p><p>&emsp;代码如下:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">   <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">char</span>&gt; p = &#123;&#123;<span class="string">')'</span>,<span class="string">'('</span>&#125;,&#123;<span class="string">']'</span>,<span class="string">'['</span>&#125;,&#123;<span class="string">'&#125;'</span>,<span class="string">'&#123;'</span>&#125;&#125;;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> ch : s)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//判断当前字符是否是正向的，如果是，放入到stack中</span></span><br><span class="line">      <span class="keyword">if</span> (!p.count(ch))</span><br><span class="line">      &#123;</span><br><span class="line">        st.puch(ch);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">if</span> (st.empty() || p[ch] != st.top())</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">          <span class="comment">//说明是一对有效的符号，弹出接着遍历下一对</span></span><br><span class="line">          st.pop();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> st.empty();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>可能刚开始看着的时候不太理解，如果换作java的stack就好理解，因为java中的stack pop函数会返回对象，而C++的不会，所以这里借助了map实现，Java可以判断遍历的字符是正向的括号，如果是就放入对应的反向括号到Stack中，如果遍历遇到反向的括号就弹出Stack最后一位元素，跟当前字符比较，不相等或者Stack为空，就可以得出该字符串是无效的括号</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;leetcode-20-Vaild-Parentheses&quot;&gt;&lt;a href=&quot;#leetcode-20-Vaild-Parentheses&quot; class=&quot;headerlink&quot; title=&quot;leetcode -20.Vaild Parentheses&quot;&gt;&lt;/
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://thorns.cn/categories/leetcode/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Imagine</title>
@@ -426,7 +449,7 @@
     <link href="https://thorns.cn/2018/12/28/2018%E5%B9%B4%E5%BA%A6%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93.html"/>
     <id>https://thorns.cn/2018/12/28/2018年度个人总结.html</id>
     <published>2018-12-27T17:47:47.000Z</published>
-    <updated>2019-11-14T07:57:23.191Z</updated>
+    <updated>2020-01-08T10:26:39.808Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>一转眼就是年底，不知不觉这已经是出来工作的第四个年头了。回望过去，感觉还是那个刀未佩妥已身在江湖的少年郎了。一切都太匆匆，希望在这节奏快的时代，有一篇文章能承载着在路上的味道。</p></blockquote><h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>&emsp;年初找到了一份自己喜欢，前景不错的工作，并且薪资也达到了理想的目标。了解了许多以前未接触的领域，有技术上的 区块链开发，duilib的界面开发，也有非技术上的，炒币 、期货 、外汇。</p><h3 id="缺点与不足"><a href="#缺点与不足" class="headerlink" title="缺点与不足"></a>缺点与不足</h3><p>&emsp;1.也许是一个人达到了心理的预期都会有一个放空期，下半年明显感觉自己在工作上，和对技术上都出现了严重的慵懒，复杂的不愿意去做，需要大量时间成本的不愿意去学习。  </p><p>&emsp;2.工作上的沟通交流明显不足，需要多锻炼沟通交流能力。好的交流能力能有效的突出自我，以及发现别人好的idea，审视自己的不足。  </p><p>&emsp;3.英文太差，英文不好的不一定是大佬，英文好的一定是大佬。在看文档时，去靠google翻译太耗时，需要提升英文能力。</p><h3 id="计划与改善"><a href="#计划与改善" class="headerlink" title="计划与改善"></a>计划与改善</h3><p>&emsp;1.多看优秀的源码与书籍，与学习。</p><blockquote><p>看redis,telegram,libevent实现，读《深度探索C++对象模型》,《Windows核心编程》,《Python3爬虫》，学习boost，muduo,spark,kafka。  </p></blockquote><p>&emsp;2.提高英文水平，储备词汇量，英文技术文档时尽量自己翻译。<br>&emsp;3.积极与同事沟通交流，多参加线下的技术交流会。</p><h3 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h3><p>&emsp;这一年里自我评价提升很快，个人认为跟工作环境以及公司团队的一个良好气氛是离不开的，对比去年由于个人沟通交流能力薄弱，工作上有许多地方没能跟上级及时沟通，不仅导致公司产品开发进度且自己也没能得到一个好的提升，在这里要感谢现在的领导和公司，得以借助他们良好的沟通能力和好的平台，让我在工作中不断的学习、提升、进步。谢谢您们！<br>工作上接触的知识面很多，当然也加了不少班，熬了不少夜。技术面相比较以前广度多了不少，如区块链，钱包，交易所等这些都是曾经未接触，随之而来的缺点就是深度不够。有很多原理、底层、框架的东西都不太明白，真正要用的时候不能信手拈来，出错时也只能靠google救场。在这里需要多看源码，多去深入学习好的架构和设计思想。</p><h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>生活上这一年要比去年过得有趣精致一点，从以前不能忍受合租到合租再到现在的独居，虽然房租贵了很多，但是值得的。想看书时，再也听不到打游戏的声音，想播放自己喜欢的音乐时，再也没有其它的歌声扰乱自己。一个人安安静静做着喜欢的事，听着喜欢的歌，美哉！偶尔周末也会自己做做饭，爬爬山，去参加技术沙龙，听听喜欢的歌手的livehouse。 </p><p>生活上由于理财意识不高，月光，导致过了一段比较拮据的时光，不过挺感谢这段时光，也让我经历了一段旁人未经历过的风景。一个人的生活最大的缺点就是作息不规律，晚上经常熬夜，吃饭不规律，饮食习惯不好，这些希望能在后面的时间日渐改善。</p><h3 id="缺点与不足-1"><a href="#缺点与不足-1" class="headerlink" title="缺点与不足"></a>缺点与不足</h3><p>&emsp;1.生活作息时间和饮食习惯极其不好<br>&emsp;2.生活很慵懒，尤其是下半年周末很少出去走动<br>&emsp;3.理财意识不高，典型月光族一枚</p><h3 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h3><p>&emsp;1.加强理财意识，物质基础决定上层建筑<br>&emsp;2.生活作息规律，培养一个好的饮食习惯（胃）</p><h2 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h2><p>2018读过的书:<br>《雨季不再来》<br>《送你一匹马》<br>《万水千山走遍》<br>《云去云来》<br>《窗里窗外》<br>《白夜行》<br>《人间失格》<br>《黄金时代》<br>《浪潮之巅》<br>《Effective C++》  </p><p>阅读量太少了，一年十本书都未到…很羞愧，在来年需要提高阅读量，少读无内容的书籍，学习是整个人生最有意义的事情。</p><h2 id="电影"><a href="#电影" class="headerlink" title="电影"></a>电影</h2><p>18年印象深刻的电影:<br>对于电影，平时看的少，所以只能慢慢追以前比较经典的电影。  </p><p>《重庆森林》&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;——“今天他喜欢凤梨，明天他可以喜欢别的”<br>《蝴蝶效应》&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;——“即使细微如蝴蝶鼓舞，也能煽动千里之飓风”<br>《海上钢琴师》&ensp;&ensp;&ensp;&ensp;&ensp; ——“fuck the regulations”<br>《泰坦尼克号》&ensp;&ensp;&ensp;&ensp;&ensp; ——“Can I take your name,please,love? Dawson.Rose Dawson”<br>《海边的曼彻斯特》&ensp;&ensp;——“I cann’t beat it”    </p><h2 id="2018实现的目标"><a href="#2018实现的目标" class="headerlink" title="2018实现的目标"></a>2018实现的目标</h2><p>1.找到一份金融行业 且团队气氛不错 薪资到达个人目标<br>2.换一台mbp<br>3.租一间自己满意的小窝<br>4.去听李志的现场<br>5.去听陈粒的现场<br>5.去香港旅游一次<br>6.去南京旅游一次</p><h2 id="2018未实现的目标"><a href="#2018未实现的目标" class="headerlink" title="2018未实现的目标"></a>2018未实现的目标</h2><p>1.存款未到  (写到这里，一两点光着身子的我瑟瑟发抖)<br>2.阅读书籍量未到10本<br>3.英文词汇量未到<br>4.出国旅行跳伞未到<br>5.杰伦的现场未到    (事出有因，可恨的黄牛！！)<br>6.冠希的现场未到    </p><h2 id="2019目标"><a href="#2019目标" class="headerlink" title="2019目标"></a>2019目标</h2><p>1.通过不断学习，技术上能得到一个质的提升<br>2.培养一门业余技能<br>3.提高理财意识，存款到达心中的目标<br>4.阅读累计20本书<br>5.坚持两周写一篇博客<br>6.芭提雅跳伞<br>7.西藏骑行<br>8.去听叁叁肆现场一次  </p><p>End</p><blockquote><p>“成为自己想成为的人，做自己想做的事。即使失败了，也可以重新再来”<br>别怕失败，大不了从头来过，你懂的！          ——陈冠希  </p></blockquote><p>最后附一张冠希的图以激励自己。<br><img src="http://image.thorns.cn/edc.jpeg" alt="avatar"></p>]]></content>
     
@@ -470,32 +493,6 @@
     
       <category term="李志" scheme="https://thorns.cn/categories/%E6%9D%8E%E5%BF%97/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>traits编程技法</title>
-    <link href="https://thorns.cn/2018/08/31/traits%E7%BC%96%E7%A8%8B%E6%8A%80%E6%B3%95.html"/>
-    <id>https://thorns.cn/2018/08/31/traits编程技法.html</id>
-    <published>2018-08-31T04:06:20.000Z</published>
-    <updated>2018-08-30T16:10:17.468Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="STL之traits编程技法的理解"><a href="#STL之traits编程技法的理解" class="headerlink" title="STL之traits编程技法的理解"></a>STL之traits编程技法的理解</h1><blockquote><p>注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录   </p></blockquote><ul><li>traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。<h2 id="迭代器的类型"><a href="#迭代器的类型" class="headerlink" title="迭代器的类型"></a>迭代器的类型</h2>我们知道迭代器有五种类型,分别是    </li></ul><ol><li>value_type(迭代器所指对象的类型)</li><li>difference_type(用来表示两个迭代器之间的距离)</li><li>reference_type(迭代器所指对象的引用)</li><li>point_type(迭代器所指的对象)</li><li>iterator_category(标识迭代器的移动特性和可以对迭代器进行的操作,大致可以分为五类)<br> Input iterator<br> Output iterator<br> Forward iterator<br> Bidirectional iterator<br> Random Access iterator     </li></ol><h2 id="声明内嵌型别"><a href="#声明内嵌型别" class="headerlink" title="声明内嵌型别"></a>声明内嵌型别</h2><p>考虑一下，当我们需要实现某个函数时,且该函数的返回类型必须是value_type是，该怎么办？我们不能使用”template 参数推导机制”,毕竟推导机制推导的是参数，无法推导函数的返回值型别。<br>在这里我们就可以用到声明内嵌型别,来解决使用value_type用于函数的返回类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">struct MyIter&#123;</span><br><span class="line">  typedef T value_type;     //内嵌型别声明</span><br><span class="line">  MyIter(T *p=0):ptr(p) &#123;&#125;</span><br><span class="line">  T&amp; operator*() const &#123;return *ptr;&#125;</span><br><span class="line">  private:</span><br><span class="line">    T *ptr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//使用value_type用于函数返回类型</span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">typename I::value_type func(I ite)</span><br><span class="line">&#123;</span><br><span class="line">    return *ite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//...</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Myiter&lt;int&gt; ite(new int(8));</span><br><span class="line">    cout&lt;&lt;func(ite)&lt;&lt;endl;  //输出:8</span><br><span class="line">&#125;</span><br><span class="line">```   </span><br><span class="line">func函数中的typename用意是在告诉编译器I::value_type是一个型别,因为T是一个template参数,在它被编译器具现化之前,编译器对T一无所悉,编译器不知道I::value_type代表的是一个型别还是一个member function或者是data member。   </span><br><span class="line">这样看起来结局了我们的问题,但是有个隐晦的陷阱:并不是所有的迭代器都是class type。原生指针就不是,如果不是class type,就无法为它定义内嵌型别。有没有好的解决办法呢？偏特化可以为我们解决这个问题。</span><br><span class="line">## 模板偏特化</span><br><span class="line">《STL源码剖析》一书上对模板偏特化的意义大致解释是:</span><br><span class="line">&gt; 如果class template拥有一个以上的template参数,我们可以针对其中某个(或数个,但非全部)template参数进行特化工作。换句话说,我们可以在泛化设计中提供一个特化版本。</span><br></pre></td></tr></table></figure></p><p>//萃取器<br>template <class i=""><br>struct iterator_traits{<br>  typedef typename T I::value_type value_type;<br>};</class></p><p>//偏特化版<br>template <class t=""><br>struct ierator_traits&lt;T*&gt;{<br>  typedef T value_type;<br>};</class></p><p>//偏特化过后的func函数<br>template <class t=""><br>typename iterator_traits<i>::value_type //这一整行是函数返回型别<br>func(I ite)<br>{<br>    return *ite;<br>}</i></class></p><p>int main()<br>{<br>    int a=8;<br>    int <em>p=&a;<br>    cout&lt;&lt;func(p)&lt;&lt;endl;    //传的类型是int</em><br>}</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上面我们通过偏特化版就可以获取原始指针的型别用来定义函数返回型别,可能会问如果原始指针是个pointer-to-const怎么办呢？没关系再偏特化一个版本就好了</span><br></pre></td></tr></table></figure><p>template <class t=""><br>struct iterator_traits<const t*="">{<br>  typedef T value_type;<br>};<br><code>`</code><br>以上就是stl中使用的traits技法，traits就像一台”特性萃取机”,萃取各个迭代器的相应型别。</const></class></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;STL之traits编程技法的理解&quot;&gt;&lt;a href=&quot;#STL之traits编程技法的理解&quot; class=&quot;headerlink&quot; title=&quot;STL之traits编程技法的理解&quot;&gt;&lt;/a&gt;STL之traits编程技法的理解&lt;/h1&gt;&lt;blockquote&gt;
-
-      
-    
-    </summary>
-    
-      <category term="STL源码剖析" scheme="https://thorns.cn/categories/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/"/>
-    
-    
-      <category term="STL traits" scheme="https://thorns.cn/tags/STL-traits/"/>
     
   </entry>
   
