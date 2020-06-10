@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="STL traits," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -89,18 +89,24 @@
 
 
 
-<meta name="description" content="STL之traits编程技法的理解 注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录      traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。迭代器的类型我们知道迭">
-<meta name="keywords" content="STL traits">
+<meta name="description" content="在路上的故事&amp;emsp;那个夏天在乔尔玛的时候，下雨，那发出微弱却温暖的烟光把帐篷烫了一个洞，一对从江西出发环华2万公里的夫妇从新藏线赶来独库，在西瓜棚边我跟他们有说有笑，他们分享他们一路上的行程，所见所闻，从家里把自己的SUV打造成在路上的房车 普通人也可以做到，在他们的后备箱有冰箱有厨具，还有容得下彼此的空间真好，我们从南疆聊到北疆、从川藏聊到新藏、从我工作聊到他孩子留学，这种彼此之间，在过往">
 <meta property="og:type" content="article">
-<meta property="og:title" content="traits编程技法">
-<meta property="og:url" content="https://thorns.cn/2018/08/31/traits编程技法.html">
+<meta property="og:title" content="在路上的故事">
+<meta property="og:url" content="https://thorns.cn/2020/06/10/story.html">
 <meta property="og:site_name" content="Thorn&#39;s Blog">
-<meta property="og:description" content="STL之traits编程技法的理解 注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录      traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。迭代器的类型我们知道迭">
+<meta property="og:description" content="在路上的故事&amp;emsp;那个夏天在乔尔玛的时候，下雨，那发出微弱却温暖的烟光把帐篷烫了一个洞，一对从江西出发环华2万公里的夫妇从新藏线赶来独库，在西瓜棚边我跟他们有说有笑，他们分享他们一路上的行程，所见所闻，从家里把自己的SUV打造成在路上的房车 普通人也可以做到，在他们的后备箱有冰箱有厨具，还有容得下彼此的空间真好，我们从南疆聊到北疆、从川藏聊到新藏、从我工作聊到他孩子留学，这种彼此之间，在过往">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-30T16:10:17.468Z">
+<meta property="og:image" content="http://image.thorns.cn/qiao1.jpeg">
+<meta property="og:image" content="http://image.thorns.cn/shamo.jpeg">
+<meta property="og:image" content="http://image.thorns.cn/luyk.jpeg">
+<meta property="og:image" content="http://image.thorns.cn/kext.jpeg">
+<meta property="og:image" content="http://image.thorns.cn/hdnj.jpeg">
+<meta property="og:image" content="https://thorns.cn/Users/thorn/Library/Application%20Support/typora-user-images/image-20200610202831401.png">
+<meta property="og:updated_time" content="2020-06-10T12:34:07.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="traits编程技法">
-<meta name="twitter:description" content="STL之traits编程技法的理解 注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录      traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。迭代器的类型我们知道迭">
+<meta name="twitter:title" content="在路上的故事">
+<meta name="twitter:description" content="在路上的故事&amp;emsp;那个夏天在乔尔玛的时候，下雨，那发出微弱却温暖的烟光把帐篷烫了一个洞，一对从江西出发环华2万公里的夫妇从新藏线赶来独库，在西瓜棚边我跟他们有说有笑，他们分享他们一路上的行程，所见所闻，从家里把自己的SUV打造成在路上的房车 普通人也可以做到，在他们的后备箱有冰箱有厨具，还有容得下彼此的空间真好，我们从南疆聊到北疆、从川藏聊到新藏、从我工作聊到他孩子留学，这种彼此之间，在过往">
+<meta name="twitter:image" content="http://image.thorns.cn/qiao1.jpeg">
 
 
 
@@ -130,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://thorns.cn/2018/08/31/traits编程技法.html"/>
+  <link rel="canonical" href="https://thorns.cn/2020/06/10/story.html"/>
 
 
 
 
 
-  <title>traits编程技法 | Thorn's Blog</title>
+  <title>在路上的故事 | Thorn's Blog</title>
   
 
 
@@ -285,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://thorns.cn/2018/08/31/traits编程技法.html">
+    <link itemprop="mainEntityOfPage" href="https://thorns.cn/2020/06/10/story.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thorn">
@@ -302,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">traits编程技法</h1>
+          <h1 class="post-title" itemprop="name headline">在路上的故事</h1>
         
 
         <div class="post-meta">
@@ -314,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T12:06:20+08:00">
-                2018-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-10T20:33:00+08:00">
+                2020-06-10
               </time>
             
 
@@ -337,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STL源码剖析/" itemprop="url" rel="index">
-                    <span itemprop="name">STL源码剖析</span>
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">life</span>
                   </a>
                 </span>
 
@@ -355,8 +361,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/31/traits编程技法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/31/traits编程技法.html" itemprop="commentCount"></span>
+                <a href="/2020/06/10/story.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/10/story.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,7 +370,7 @@
 
           
           
-             <span id="/2018/08/31/traits编程技法.html" class="leancloud_visitors" data-flag-title="traits编程技法">
+             <span id="/2020/06/10/story.html" class="leancloud_visitors" data-flag-title="在路上的故事">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  884
+                  942
                 </span>
               
 
@@ -426,26 +432,20 @@
       
 
       
-        <h1 id="STL之traits编程技法的理解"><a href="#STL之traits编程技法的理解" class="headerlink" title="STL之traits编程技法的理解"></a>STL之traits编程技法的理解</h1><blockquote>
-<p>注:很多内容节选自《STL源码剖析》,见上自己的理解，特此记录   </p>
-</blockquote>
-<ul>
-<li>traits又被叫做”特性萃取技术”,用于提取被”被传进来的对象对应的返回类型,让同一个接口实现对应的功能。因为STL的算法和容器是分离的,两者通过迭代器连接,算法的实现并不知道传进来的是什么,萃取器相当于接口和实现之间加一层封装,来隐藏一些细节并协助调用合适的方法。<h2 id="迭代器的类型"><a href="#迭代器的类型" class="headerlink" title="迭代器的类型"></a>迭代器的类型</h2>我们知道迭代器有五种类型,分别是    </li>
-</ul>
-<ol>
-<li>value_type(迭代器所指对象的类型)</li>
-<li>difference_type(用来表示两个迭代器之间的距离)</li>
-<li>reference_type(迭代器所指对象的引用)</li>
-<li>point_type(迭代器所指的对象)</li>
-<li>iterator_category(标识迭代器的移动特性和可以对迭代器进行的操作,大致可以分为五类)<br> Input iterator<br> Output iterator<br> Forward iterator<br> Bidirectional iterator<br> Random Access iterator     </li>
-</ol>
-<h2 id="声明内嵌型别"><a href="#声明内嵌型别" class="headerlink" title="声明内嵌型别"></a>声明内嵌型别</h2><p>考虑一下，当我们需要实现某个函数时,且该函数的返回类型必须是value_type是，该怎么办？我们不能使用”template 参数推导机制”,毕竟推导机制推导的是参数，无法推导函数的返回值型别。<br>在这里我们就可以用到声明内嵌型别,来解决使用value_type用于函数的返回类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">struct MyIter&#123;</span><br><span class="line">  typedef T value_type;     //内嵌型别声明</span><br><span class="line">  MyIter(T *p=0):ptr(p) &#123;&#125;</span><br><span class="line">  T&amp; operator*() const &#123;return *ptr;&#125;</span><br><span class="line">  private:</span><br><span class="line">    T *ptr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//使用value_type用于函数返回类型</span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">typename I::value_type func(I ite)</span><br><span class="line">&#123;</span><br><span class="line">    return *ite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//...</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Myiter&lt;int&gt; ite(new int(8));</span><br><span class="line">    cout&lt;&lt;func(ite)&lt;&lt;endl;  //输出:8</span><br><span class="line">&#125;</span><br><span class="line">```   </span><br><span class="line">func函数中的typename用意是在告诉编译器I::value_type是一个型别,因为T是一个template参数,在它被编译器具现化之前,编译器对T一无所悉,编译器不知道I::value_type代表的是一个型别还是一个member function或者是data member。   </span><br><span class="line">这样看起来结局了我们的问题,但是有个隐晦的陷阱:并不是所有的迭代器都是class type。原生指针就不是,如果不是class type,就无法为它定义内嵌型别。有没有好的解决办法呢？偏特化可以为我们解决这个问题。</span><br><span class="line">## 模板偏特化</span><br><span class="line">《STL源码剖析》一书上对模板偏特化的意义大致解释是:</span><br><span class="line">&gt; 如果class template拥有一个以上的template参数,我们可以针对其中某个(或数个,但非全部)template参数进行特化工作。换句话说,我们可以在泛化设计中提供一个特化版本。</span><br></pre></td></tr></table></figure></p>
-<p>//萃取器<br>template <class i=""><br>struct iterator_traits{<br>  typedef typename T I::value_type value_type;<br>};</class></p>
-<p>//偏特化版<br>template <class t=""><br>struct ierator_traits&lt;T*&gt;{<br>  typedef T value_type;<br>};</class></p>
-<p>//偏特化过后的func函数<br>template <class t=""><br>typename iterator_traits<i>::value_type //这一整行是函数返回型别<br>func(I ite)<br>{<br>    return *ite;<br>}</i></class></p>
-<p>int main()<br>{<br>    int a=8;<br>    int <em>p=&a;<br>    cout&lt;&lt;func(p)&lt;&lt;endl;    //传的类型是int</em><br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上面我们通过偏特化版就可以获取原始指针的型别用来定义函数返回型别,可能会问如果原始指针是个pointer-to-const怎么办呢？没关系再偏特化一个版本就好了</span><br></pre></td></tr></table></figure>
-<p>template <class t=""><br>struct iterator_traits<const t*="">{<br>  typedef T value_type;<br>};<br><code>`</code><br>以上就是stl中使用的traits技法，traits就像一台”特性萃取机”,萃取各个迭代器的相应型别。</const></class></p>
+        <h2 id="在路上的故事"><a href="#在路上的故事" class="headerlink" title="在路上的故事"></a>在路上的故事</h2><p>&emsp;那个夏天在乔尔玛的时候，下雨，那发出微弱却温暖的烟光把帐篷烫了一个洞，一对从江西出发环华2万公里的夫妇从新藏线赶来独库，在西瓜棚边我跟他们有说有笑，他们分享他们一路上的行程，所见所闻，从家里把自己的SUV打造成在路上的房车 普通人也可以做到，在他们的后备箱有冰箱有厨具，还有容得下彼此的空间真好，我们从南疆聊到北疆、从川藏聊到新藏、从我工作聊到他孩子留学，这种彼此之间，在过往素未谋面只因相同的爱好聚到一起开怀畅聊的感觉真好。  </p>
+<p>到最后，夜晚11点多我记得那一句</p>
+<p>“小兄弟，我把车停在你前面，这样风就吹不到你了”    </p>
+<p><img src="http://image.thorns.cn/qiao1.jpeg" alt="avatar"></p>
+<p>&emsp;火车一直往前开，穿越了湖泊、高原、雪山，在塔里木沙漠公路因为缺水暴晒，第一次在路上骑行有挺不住的想法，路过了一辆越野问我从哪里来，我没理只给他比了一个👍手势，那是自己在骑行路上收到的第一瓶红牛，那瓶红牛让我继续坚持骑行了100公里，一个人在沙漠里哼起了他的歌，“星空和黑夜，我们生来就是孤独～ 你就像屎的倒影”，我想在那个时间那个点，埋头哼唱是自由的，谁也不会听见，风声会携带着沙尘穿过我的低聆飞向沙暴中心去到无人的远方。  </p>
+<p><img src="http://image.thorns.cn/shamo.jpeg" alt="avatar"></p>
+<p>&emsp;时间如果在往前旋转点，接近天黑在霍城县里找不到露营的地方，无奈跑到了一座深巷老旧的院子里，我害羞的跟着陌生人询问“能不能在这里搭个帐篷路个营”，我记得自己都听不懂在讲个什么，害羞、不好意思的情绪支配着我的嘴进行动作，她担心我在院子里睡着不舒服被风吹，拿钥匙给我开了一间没有人住的房间叫我搭在里面，还主动邀请自己去他们家吃饭，被我婉拒了…</p>
+<p><img src="http://image.thorns.cn/luyk.jpeg" alt="avatar"></p>
+<p>&emsp;依稀还记得，春节过年，环岛骑行，科学自由，像个傻逼。那是自己第一次意义上的在路上，那是在元旦跨完年从南京回来就做好的决定，那年距离现在其实并不久，也就两年的时光。</p>
+<p><img src="http://image.thorns.cn/kext.jpeg" alt="avatar"></p>
+<p><img src="http://image.thorns.cn/hdnj.jpeg" alt="avatar"></p>
+<p>&emsp;回想起来，在路上，虽一人往，但需要铭记于心的人太多太多，时常想起仍觉得美好。一直在耳朵旁陪着我的那个南京市民从海南环岛、新疆骑行、绿皮火车、关于郑州、定西兰州……如今他没在路上陪我很久很久了，甚至已经记不起他是那副模样，只知道在路上一直有他在耳边，我就还能继续前行。当然也忘不了在沙漠外围铁运轨路下自己在墙壁写上的那几个字，想起来过于傻逼，也就不想贴了。今年原本计划的尼泊尔EBC之行，因疫情，无奈之下退了票。</p>
+<p>&emsp;这些都没有什么不好，无法在路上就宅家修身养性，无法听到想听的歌，就不用在麻烦试着去找资源听了，无法看的书，那就换一本看吧。但不管怎样，当这些在路上的故事再也无法往返，我想——唯一能做的就是带着感动去铭记那些瞬间，哪怕再也无法有这种体验，也要记得 forever。</p>
+<p><img src="/Users/thorn/Library/Application Support/typora-user-images/image-20200610202831401.png" alt="avatar"></p>
 
       
     </div>
@@ -490,12 +490,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/STL-traits/" rel="tag"># STL traits</a>
-          
-        </div>
-      
 
       
       
@@ -505,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/23/ubuntu安装Mongodb及配置.html" rel="next" title="ubuntu安装Mongodb及配置">
-                <i class="fa fa-chevron-left"></i> ubuntu安装Mongodb及配置
+              <a href="/2020/01/09/leetcode_20.html" rel="next" title="20.Vaild Parentheses">
+                <i class="fa fa-chevron-left"></i> 20.Vaild Parentheses
               </a>
             
           </div>
@@ -514,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/09/1208.html" rel="prev" title="这么多年你一个人 一直在走">
-                这么多年你一个人 一直在走 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -687,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STL之traits编程技法的理解"><span class="nav-number">1.</span> <span class="nav-text">STL之traits编程技法的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器的类型"><span class="nav-number">1.1.</span> <span class="nav-text">迭代器的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明内嵌型别"><span class="nav-number">1.2.</span> <span class="nav-text">声明内嵌型别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在路上的故事"><span class="nav-number">1.</span> <span class="nav-text">在路上的故事</span></a></li></ol></div>
             
 
           </div>
