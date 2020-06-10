@@ -4,8 +4,26 @@
 
     
   <url>
+    <loc>https://thorns.cn/2019/12/10/1210.html</loc>
+    <lastmod>2020-06-10T12:37:53.090Z</lastmod>
+    <data>
+        <display>
+        <title>记窗外耳声</title>
+        <pubTime>2019-12-10T01:20:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Life" url="https://thorns.cn/categories/Life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://thorns.cn/2020/06/10/story.html</loc>
-    <lastmod>2020-06-10T12:34:07.082Z</lastmod>
+    <lastmod>2020-06-10T12:37:38.846Z</lastmod>
     <data>
         <display>
         <title>在路上的故事</title>
@@ -14,7 +32,7 @@
          
            
              
-              <breadCrumb title="life" url="https://thorns.cn/categories/life/"/>
+              <breadCrumb title="Life" url="https://thorns.cn/categories/Life/"/>
           
         </display>
     </data>
@@ -105,24 +123,6 @@
            
              
               <breadCrumb title="leetcode" url="https://thorns.cn/categories/leetcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://thorns.cn/2019/12/10/1210.html</loc>
-    <lastmod>2019-12-11T07:02:31.838Z</lastmod>
-    <data>
-        <display>
-        <title>记窗外耳声</title>
-        <pubTime>2019-12-10T01:20:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="life" url="https://thorns.cn/categories/life/"/>
           
         </display>
     </data>
