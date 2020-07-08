@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2020-06-24T10:13:36.130Z</updated>
+  <updated>2020-07-08T16:15:26.962Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>聚散终有时，感谢相遇</title>
+    <link href="https://thorns.cn/2020/07/09/%E8%81%9A%E6%95%A3%E7%BB%88%E6%9C%89%E6%97%B6%EF%BC%8C%E6%84%9F%E8%B0%A2%E7%9B%B8%E9%81%87.html"/>
+    <id>https://thorns.cn/2020/07/09/聚散终有时，感谢相遇.html</id>
+    <published>2020-07-08T16:14:05.000Z</published>
+    <updated>2020-07-08T16:15:26.962Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="聚散终有时，感谢相遇"><a href="#聚散终有时，感谢相遇" class="headerlink" title="聚散终有时，感谢相遇"></a>聚散终有时，感谢相遇</h3><blockquote><p>浪潮来临时，没有一粒尘埃可以在浪花下避免。</p></blockquote><p>&emsp;曾设想过一个问题，万一有一天我被裁了会怎么办？当时心中的答案是 “在路上”，背着一个背包，去各地流浪，想到此</p><p>心中不免有一些愉悦和期待那一天的到来……</p><p>&emsp;可当这一天来临时，终究还是不舍。</p><p>&emsp;下午，老板找我聊了一会儿，告诉我是时候该说“道别的时候了”。回想起，去年这个时候，刚好也是我向老板提出离职请求，理由我并没有隐瞒——自己不太适合公司如今的项目，要去新疆骑行。犹记得那段谈话 “去吧，不用离职，给你批假，放松好了再回来上班，项目不合适等你回来后，给你换其它项目试试”。此去就是一月，回来后老板还跟我谈起这段旅程，也是从那时候我知道，原来我老板也是个性情中人，在他创业前，也曾单枪匹马的骑过川藏。来了兴趣，除了工作关系外，多多少少与他有点共同话题。</p><p>&emsp;由于今年疫情关系，中小型公司都很惨，我们公司当然也不例外，而且由于业务关系，疫情后期简直惨不忍睹。开会说公司的财务状况很紧张，以至于我们的薪水有时都是借贷来发放，但我知道的，不管财务多紧张，至少没有一个月他拖欠了工资。</p><p>&emsp;18.03～20.07，很快，两年时间，有一起加班到凌晨赶着项目上线，有一起在办公室吃泡面发布版本…….缘，妙不可言，一切感谢相遇。</p><p>&emsp;还记得开会，老板对我们说的一句 “像Thorn这种放荡不羁，喜欢在路上的人，以后失了业，可能也就不会去工作了”。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;聚散终有时，感谢相遇&quot;&gt;&lt;a href=&quot;#聚散终有时，感谢相遇&quot; class=&quot;headerlink&quot; title=&quot;聚散终有时，感谢相遇&quot;&gt;&lt;/a&gt;聚散终有时，感谢相遇&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;浪潮来临时，没有一粒尘埃可以在浪花下避免。&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="Life" scheme="https://thorns.cn/categories/Life/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>leetcode.11 盛最多水的容器</title>
@@ -459,29 +483,6 @@
       
       
         &lt;h1 id=&quot;String-to-Integer-atoi&quot;&gt;&lt;a href=&quot;#String-to-Integer-atoi&quot; class=&quot;headerlink&quot; title=&quot; String to Integer(atoi) &quot;&gt;&lt;/a&gt;&lt;font face=&quot;Calib
-      
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://thorns.cn/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Reverse interger</title>
-    <link href="https://thorns.cn/2019/01/06/Reverse%20interger.html"/>
-    <id>https://thorns.cn/2019/01/06/Reverse interger.html</id>
-    <published>2019-01-05T17:47:47.000Z</published>
-    <updated>2019-01-08T07:53:10.457Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Reverse-interger"><a href="#Reverse-interger" class="headerlink" title="Reverse interger"></a>Reverse interger</h1><p>将一个整数反转，需要考虑溢出。<br>leetcode 原题链接：<a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">https://leetcode.com/problems/reverse-integer/</a><br>example: x=123,return 321<br>example: x=-123,return -321<br>此题难度easy，不过需要考虑的是反转之后溢出情况。int32的范围-2147483648,2147483647。直接贴代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int reverse(int x)</span><br><span class="line">&#123;</span><br><span class="line">    int res = 0;</span><br><span class="line">    while (x != 0) &#123;</span><br><span class="line">        //判断是否溢出</span><br><span class="line">        if (abs(res) &gt; INT_MAX/10)</span><br><span class="line">            return 0;</span><br><span class="line">        res = res *10 + x % 10;</span><br><span class="line">        x /= 10;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>当然也可以定义一个long long类型的变量，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//解法2</span><br><span class="line">int reverse(int x)</span><br><span class="line">&#123;</span><br><span class="line">    long long res=0;</span><br><span class="line">    while (x != 0) &#123;</span><br><span class="line">        res = res *10 + x % 10;</span><br><span class="line">        x /= 10;</span><br><span class="line">    &#125;</span><br><span class="line">    //判断溢出</span><br><span class="line">    return (res&gt;INT_MAX||res&lt;INT_MIN)?0:res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>解法一，是直接判断是否大于INT_MAX/10(即214748364)，当res&gt;214748364时，必定溢出。因为x的第一位只能是1或者2，所以再执行res=res*10+x/10就会溢出。<br>解法二，直接定义了一个long long类型，最后判断是否大于INT_MAX或者小于INT_MIN。个人推荐解法一。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Reverse-interger&quot;&gt;&lt;a href=&quot;#Reverse-interger&quot; class=&quot;headerlink&quot; title=&quot;Reverse interger&quot;&gt;&lt;/a&gt;Reverse interger&lt;/h1&gt;&lt;p&gt;将一个整数反转，需要考虑溢出
       
     
     </summary>
