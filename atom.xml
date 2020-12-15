@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2020-07-08T16:15:26.962Z</updated>
+  <updated>2020-12-15T16:09:23.261Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt针对多扩展屏处理显示</title>
+    <link href="https://thorns.cn/2020/12/16/Qt%E9%92%88%E5%AF%B9%E5%A4%9A%E6%89%A9%E5%B1%95%E5%B1%8F%E5%A4%84%E7%90%86%E6%98%BE%E7%A4%BA.html"/>
+    <id>https://thorns.cn/2020/12/16/Qt针对多扩展屏处理显示.html</id>
+    <published>2020-12-16T04:06:30.000Z</published>
+    <updated>2020-12-15T16:09:23.261Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Qt针对多扩展屏处理显示"><a href="#Qt针对多扩展屏处理显示" class="headerlink" title="Qt针对多扩展屏处理显示"></a>Qt针对多扩展屏处理显示</h2><p>&ensp;在工作中遇到程序需要对多扩展屏进行显示，之前一直是用QApplication::desktop()-&gt;screenGeometry()获取屏幕大小，但是此方法在多个显示器就失效了。不过Qt 中已经有封装好的api针对多屏处理。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">primaryScreen</span><span class="params">()</span></span>;  <span class="comment">//获取主屏幕的索引</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">screenCount</span><span class="params">()</span></span>;    <span class="comment">//获取系统可用的屏幕数量</span></span><br><span class="line"><span class="function">QRect <span class="title">screenGeometry</span><span class="params">(<span class="keyword">int</span> screen=<span class="number">-1</span>)</span></span>;  <span class="comment">//获取指定屏幕索引的分辨率,默认屏幕-1，主屏幕一般是0</span></span><br></pre></td></tr></table></figure><p>有了这几个函数，我们就可以针对多屏进行处理，获取用户设置的主屏幕索引再将我们的程序设置显示到此屏幕就行了，代码如下</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> primaryIndex = desktop-&gt;primaryScreen();</span><br><span class="line"><span class="keyword">if</span> (desktop-&gt;screenCount())</span><br><span class="line">&#123;</span><br><span class="line">  window-&gt;setGeometry(desktop-&gt;screenGeometry(primaryIndex));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Qt针对多扩展屏处理显示&quot;&gt;&lt;a href=&quot;#Qt针对多扩展屏处理显示&quot; class=&quot;headerlink&quot; title=&quot;Qt针对多扩展屏处理显示&quot;&gt;&lt;/a&gt;Qt针对多扩展屏处理显示&lt;/h2&gt;&lt;p&gt;&amp;ensp;在工作中遇到程序需要对多扩展屏进行显示，之前一直
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>聚散终有时，感谢相遇</title>
@@ -454,29 +475,6 @@
       
       
         &lt;h1 id=&quot;String-to-Integer-atoi&quot;&gt;&lt;a href=&quot;#String-to-Integer-atoi&quot; class=&quot;headerlink&quot; title=&quot; String to Integer(atoi) &quot;&gt;&lt;/a&gt;&lt;font face=&quot;Calib
-      
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://thorns.cn/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Reverse interger</title>
-    <link href="https://thorns.cn/2019/01/06/Reverse%20interger.html"/>
-    <id>https://thorns.cn/2019/01/06/Reverse interger.html</id>
-    <published>2019-01-05T17:47:47.000Z</published>
-    <updated>2019-01-08T07:53:10.457Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Reverse-interger"><a href="#Reverse-interger" class="headerlink" title="Reverse interger"></a>Reverse interger</h1><p>将一个整数反转，需要考虑溢出。<br>leetcode 原题链接：<a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">https://leetcode.com/problems/reverse-integer/</a><br>example: x=123,return 321<br>example: x=-123,return -321<br>此题难度easy，不过需要考虑的是反转之后溢出情况。int32的范围-2147483648,2147483647。直接贴代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int reverse(int x)</span><br><span class="line">&#123;</span><br><span class="line">    int res = 0;</span><br><span class="line">    while (x != 0) &#123;</span><br><span class="line">        //判断是否溢出</span><br><span class="line">        if (abs(res) &gt; INT_MAX/10)</span><br><span class="line">            return 0;</span><br><span class="line">        res = res *10 + x % 10;</span><br><span class="line">        x /= 10;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>当然也可以定义一个long long类型的变量，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//解法2</span><br><span class="line">int reverse(int x)</span><br><span class="line">&#123;</span><br><span class="line">    long long res=0;</span><br><span class="line">    while (x != 0) &#123;</span><br><span class="line">        res = res *10 + x % 10;</span><br><span class="line">        x /= 10;</span><br><span class="line">    &#125;</span><br><span class="line">    //判断溢出</span><br><span class="line">    return (res&gt;INT_MAX||res&lt;INT_MIN)?0:res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>解法一，是直接判断是否大于INT_MAX/10(即214748364)，当res&gt;214748364时，必定溢出。因为x的第一位只能是1或者2，所以再执行res=res*10+x/10就会溢出。<br>解法二，直接定义了一个long long类型，最后判断是否大于INT_MAX或者小于INT_MIN。个人推荐解法一。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Reverse-interger&quot;&gt;&lt;a href=&quot;#Reverse-interger&quot; class=&quot;headerlink&quot; title=&quot;Reverse interger&quot;&gt;&lt;/a&gt;Reverse interger&lt;/h1&gt;&lt;p&gt;将一个整数反转，需要考虑溢出
       
     
     </summary>
