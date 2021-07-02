@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2021-07-01T15:00:07.847Z</updated>
+  <updated>2021-07-01T15:04:27.487Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>inno setup签名解决360报错</title>
     <link href="https://thorns.cn/2021/07/01/inno%20setup%E7%AD%BE%E5%90%8D%E8%A7%A3%E5%86%B3360%E6%8A%A5%E6%AF%92.html"/>
     <id>https://thorns.cn/2021/07/01/inno setup签名解决360报毒.html</id>
-    <published>2021-07-01T15:01:55.351Z</published>
-    <updated>2021-07-01T15:00:07.847Z</updated>
+    <published>2021-07-01T15:04:00.000Z</published>
+    <updated>2021-07-01T15:04:27.487Z</updated>
     
     <content type="html"><![CDATA[<h2 id="inno-setup签名解决360报毒"><a href="#inno-setup签名解决360报毒" class="headerlink" title="inno setup签名解决360报毒"></a>inno setup签名解决360报毒</h2><p>&emsp;最近使用inno setup编译安装包，发现在有安装360杀毒软件的用户电脑环境上，被误报有病毒，exe已经提交给360过白名单了还是会误报，经了解发现是inno setup在运行的时候会生成tmp文件，360把这些tmp文件误认为是病毒了。</p><p>&emsp;解决方法是给被误报的文件添加数字签名，inno setup也支持添加数字签名，前提是你得先有一个数字证书。</p><h3 id="配置数字签名工具"><a href="#配置数字签名工具" class="headerlink" title="配置数字签名工具"></a>配置数字签名工具</h3><p>首先在inno setup工具中，选择配置数字签名工具</p><p><img src="http://image.thorns.cn/inno.jpg" alt=""></p><p>在这里我使用的是单签名的方式，摘要算法是sha384，所以名称就直接填写sha384(如果是双签名，添加两种不同的摘要就行了)</p><p>点击确定，签名工具我们可以直接选择微软自带的 signtool.exe，将以下命令行参数添加到配置里面</p><p>signtool.exe sign /f “C:\User\code.pfx” /p testpasswd /t <a href="http://timestamp.wosign.com/timestamp" target="_blank" rel="noopener">http://timestamp.wosign.com/timestamp</a> $f </p><p>这里解释一下几个参数的作用，/f 指定的是你的证书路径，/p 是对应的证书文件密码，/t 时间戳服务器，如果不填将不会对签名文件进行时间戳操作。还有许多参数，如果想具体了解各参数的作用，可以去微软提供的文档查看<a href="https://docs.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe#catdb。" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe#catdb。</a></p><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>注意：在使用signtool.exe进行签名前，需要将你本地的signtool.exe路径添加环境变量中，可以使用everything等工具搜索程序。</p><h3 id="添加inno-setup脚本"><a href="#添加inno-setup脚本" class="headerlink" title="添加inno setup脚本"></a>添加inno setup脚本</h3><p>最后，添加完配置，我们只需要在iss脚本文件中，Setup段添加一句 SignTool=sha384就好了，点击编译，最后所以的程序包括安装包、运行时生成的tmp文件，都已经进行过签名了，在360的环境下进行测试，发现没有任何异常。</p>]]></content>
     
@@ -33,6 +33,8 @@
       
     
     </summary>
+    
+      <category term="inno setup" scheme="https://thorns.cn/categories/inno-setup/"/>
     
     
   </entry>
