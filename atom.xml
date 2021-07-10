@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thorns.cn/"/>
-  <updated>2021-07-01T15:04:27.487Z</updated>
+  <updated>2021-07-10T15:31:31.175Z</updated>
   <id>https://thorns.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>复制省略和Most vexing parse</title>
+    <link href="https://thorns.cn/2021/07/10/%E5%A4%8D%E5%88%B6%E7%9C%81%E7%95%A5%E5%92%8CMost_Vexing_Parse.html"/>
+    <id>https://thorns.cn/2021/07/10/复制省略和Most_Vexing_Parse.html</id>
+    <published>2021-07-10T15:31:00.000Z</published>
+    <updated>2021-07-10T15:31:31.175Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="复制省略和Most-vexing-parse"><a href="#复制省略和Most-vexing-parse" class="headerlink" title="复制省略和Most vexing parse"></a>复制省略和Most vexing parse</h1><p>今天在和群里的朋友聊到右值和右值引用，发现C++的一些新特性自己掌握的还是不够深，特此记录一下。</p><p>起因是，和朋友讨论const引用，会不会调用移动赋值操作，于是便写了下面一段代码进行验证</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  Test()&#123;&#125;</span><br><span class="line">  Test(<span class="keyword">const</span> Test &amp;t) &#123; <span class="built_in">cout</span> &lt;&lt;<span class="string">"copy construct"</span> &lt;&lt; end;&#125;</span><br><span class="line">  Test(<span class="keyword">const</span> Test &amp;&amp;t) &#123;<span class="built_in">cout</span> &lt;&lt;<span class="string">"move construct"</span>&lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Test obj(Test());</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>进行编译，发现输出的结果和自己的预想并不一致，可能有的小伙伴是和我一样的预期，都会认为会调用移动构造函数，然后输出move construct。可事实上啥也不会输出，如果用的是g++编译器，还会报一句warnning:”parentheses were disambiguated as a function declaration “。</p><h2 id="Most-vexing-parse"><a href="#Most-vexing-parse" class="headerlink" title="Most vexing parse"></a>Most vexing parse</h2><blockquote><p>The <strong>most vexing parse</strong> is a counterintuitive form of syntactic ambiguity resolution in the C++ language. In certain situations, the C++ grammar cannot distinguish between the creation of an object parameter and specification of a function’s type In those situations, the compiler is required to interpret the line as a function type specification.</p><p>详情请参考<a href="https://en.wikipedia.org/wiki/Most_vexing_parse" target="_blank" rel="noopener">原文链接</a></p></blockquote><p>Most vexing parse 翻译为最令人烦恼的解析，这个术语是 Scott Meyers在《Effective STL》中提出的，大意是指在某些情况下C++语法无法区分对象参数的创建和函数类型的声明，在这些情况下，编译器会将这一行解释为为一个函数类型。</p><p>也就是说在main函数里面的这一行 Test(Test()); 它会被解释为两种情况：</p><ol><li>声明了类型为Test名称为obj的对象，并且使用类型为Test的临时对象去初始化</li><li>声明了一个返回值为Test类型名为obj的函数，该函数有一个匿名的参数，参数类型是一个指向返回值类型为Test，没有参数的函数指针</li></ol><p>这种语句是模棱两可的，C++标准规定把这种情况认定为是函数声明。</p><p>所以以上，obj在这里只是一个函数，不是一个对象，根本不会调用移动构造函数。如果确实要这样调用移动构造函数，有两种办法</p><pre><code>1. 使用C-style cast。Test obj((Test())); 2. 使用{}统一初始化。Test obj{Test{}};</code></pre><p>至此，就避免了Most vexing parse，现在想想，我们使用了{}统一初始化，程序会输出什么？</p><p>答案还是，什么也不输出。</p><h2 id="Copy-Elision"><a href="#Copy-Elision" class="headerlink" title="Copy Elision"></a>Copy Elision</h2><blockquote><p>In C++ computer programming, copy elision refers to a compiler optimization technique that eliminates unnecessary copying of objects.</p><p>详情参考<a href="https://en.wikipedia.org/wiki/Copy_elision" target="_blank" rel="noopener">原文链接</a></p></blockquote><p>这是因为，编译器为我们提供了优化，包括G++、vs上都有这种优化。</p><p>当一个类类型的临时对象用来初始化同类型的对象时，复制构造会被编译器优化为直接构造，例如Test obj{Test{}};首先按照正常流程会先生成一个Test类型的临时对象，在调用移动构造初始化对象obj。编译器优化会优化掉这个移动赋值的过程，因为初始化临时对象和初始化obj的时候过程是相同的。如果面对数据量大的时候，会影响程序性能。</p><p>当然对于这种优化，其类的复制初始化或者是移动初始化是要public的，如果将移动构造声明为private，编译器就会报错。某种情况下，如果我们不需要这种优化，可以通过添加编译选项禁止这种优化，在G++中可以通过 -fno-elide-constructors命令选项禁止。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;复制省略和Most-vexing-parse&quot;&gt;&lt;a href=&quot;#复制省略和Most-vexing-parse&quot; class=&quot;headerlink&quot; title=&quot;复制省略和Most vexing parse&quot;&gt;&lt;/a&gt;复制省略和Most vexing par
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://thorns.cn/categories/C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>inno setup签名解决360报错</title>
@@ -456,30 +479,6 @@
     </summary>
     
       <category term="C++" scheme="https://thorns.cn/categories/C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>蒲公英和炊烟都在等你</title>
-    <link href="https://thorns.cn/2019/01/19/dandelion.html"/>
-    <id>https://thorns.cn/2019/01/19/dandelion.html</id>
-    <published>2019-01-18T20:27:00.000Z</published>
-    <updated>2019-07-15T03:15:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="蒲公英和炊烟都在等你"><a href="#蒲公英和炊烟都在等你" class="headerlink" title="蒲公英和炊烟都在等你"></a>蒲公英和炊烟都在等你</h1><blockquote><p>蒲公英和炊烟都在等你，你的孩子一直很乖  </p></blockquote><p><img src="http://image.thorns.cn/mama.jpeg" alt="avatar"><br>&emsp;睡下的时候，应是周五的十一点十几分，挂断了朋友的电话对他轻轻的讲了句”我要睡了”。收拾好因找不到一包烟，被我翻的乱七八糟的房间，躺在床上，记忆中很久没有这么早睡过了，不知道为什么从跨年去南京一趟，回来到现在整个人都很累，有身体上的疲惫有精神上的面对。   </p><p>&emsp;我想今天晚上或许会有点不同，房间是干净的，昏黄的灯光折射出十来平的小窝，显得别具一格的宽阔不会被人潮拥挤。脑海中回响”四点多的时候应该会醒来”，醒来时却发现比预想提前了两个小时。总感觉会发生点什么，在这个夜晚会不一样。</p><h2 id="1-19-2-53"><a href="#1-19-2-53" class="headerlink" title="1.19 2:53"></a>1.19 2:53</h2><p>在 1月19日凌晨两点五十三分床上的手机屏幕亮了，像是久违的一束阳光照在我脸膛，手机屏幕传来的是网易云音乐上别人给我点赞的消息，是我在李志的《妈妈》下面</p><blockquote><p>“我想这首歌 评论没有上万。都是害怕去听吧。”     </p></blockquote><p>&emsp;这首歌按李逼一贯的风格有很多个版本，最先发布在《这个世界会好吗》专辑下，还有“13live”,“14io”，个人听歌比较钟爱于live，追求真实，身入其镜的感觉。也就开始了“13live版”的《妈妈》。</p><h2 id="红色推土机"><a href="#红色推土机" class="headerlink" title="红色推土机"></a>红色推土机</h2><p>&emsp;也许是某一天，实在忍受不了没日没夜的单曲循环，发了疯似的把李志的歌全部收集到了歌单里面，列表循环在歌声缓缓流入耳朵不经意间发现了《妈妈》这首歌还有另外一个不为大众知道的版本，——“红色推土机”  </p><p>&emsp;故事的开始貌似都是以时间作分割。</p><blockquote><p>09年，民谣歌手周云蓬发起了一个帮助贫困盲童的计划。目的是为那些家境贫困的失明孩子，购买他们需要的乐器、mp3播放器、读书机。   为了让更多的人知道这个计划，周云蓬邀请众多民谣歌手无偿录制了一个童谣专辑，每个歌手或翻唱、或原创一首童谣歌曲，一共25首儿歌收录在两张CD中，专辑名字为《红色推土机》。这张专辑把当下“新民谣”阵营里的歌手一网打尽，称得上是民谣歌手的一张全家福。而这些创作音乐人，在这一次的专辑里，也从往日的角色中越轨而出，放下沉重，低吟浅唱，唱给暂时的黑暗和永远的孩子。    </p></blockquote><p>&emsp;真巧，李志这首《妈妈》也在其中，对伴奏进行了些许改变，试听了一下，这首歌的伴奏是这几个版本中是我最喜欢的，也是我最害怕的，好像是有种束缚或者规则，限制了人越喜欢的东西越害怕失去，害怕损坏，害怕别人知道，害怕得不到….害怕去听。整首歌给我的感觉是 太多太多的消极，负面情绪如海啸袭来将你淹没，将你的身子冲刷在海底。扫了扫留言看到一条很真实很特别的评论</p><blockquote><p>昨晚叁叁肆汉中场，逼哥唱这首歌时，那句”你的孩子一直很乖”唱成了”你的孩子一直很怪”,当时在现场的我真的是止不住的掉。妈妈，”你的孩子一直很怪”</p></blockquote><p>&emsp;好奇点头像进去，翻了翻您的动态，又看到一条特别的动态，静悄悄地留了一句 “蒲公英和炊烟都在等你”。接着在自己动态里分享了这首歌，也留下了一句——“2019 1.14 5:10”。</p><h2 id="您的孩子一直很乖"><a href="#您的孩子一直很乖" class="headerlink" title="您的孩子一直很乖"></a>您的孩子一直很乖</h2><blockquote><p>写歌的人最无情，听歌的人假正经    </p></blockquote><p>&emsp;最害怕忽然听懂一首歌，看懂一本书，明白一个道理。就像李宗盛的歌写道“春风再美也比不上你的笑，没见过你的人不会明了”,有时候明了的人真明了，不明了的人永远也不会明了。</p><p>&emsp;记录到这，不想在记录了，因为已经凌晨四点了，该睡了明天还要”“噢！不 是今天”——还要继续过着充实且有趣的生活。<br>&emsp;我相信在每个夜晚，歌里面会告诉我一切。  </p><p>&emsp;收到网易云通知消息的时候，在此后的一分钟对您发了一句”真巧”。——“真巧”<br><img src="http://image.thorns.cn/qiao.jpeg" alt="avatar"></p><h1 id="您的孩子一直很怪"><a href="#您的孩子一直很怪" class="headerlink" title="您的孩子一直很怪"></a>您的孩子一直很怪</h1><p>蒲公英和炊烟都在等你<br>您的孩子一直很乖<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——于2019 1.19 4:27</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;蒲公英和炊烟都在等你&quot;&gt;&lt;a href=&quot;#蒲公英和炊烟都在等你&quot; class=&quot;headerlink&quot; title=&quot;蒲公英和炊烟都在等你&quot;&gt;&lt;/a&gt;蒲公英和炊烟都在等你&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;蒲公英和炊烟都在等你，你的孩子一直很乖  &lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="李志" scheme="https://thorns.cn/categories/%E6%9D%8E%E5%BF%97/"/>
     
     
   </entry>
